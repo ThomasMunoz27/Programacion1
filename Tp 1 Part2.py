@@ -121,6 +121,70 @@ num_inv = b + a
 
 print(f"El número invertido es: {num_inv}")
 
+#Ejercicio 14
+a=input("Ingresar el valor numérico de a: ")
+b=input("Ingresar el valor numérico de b: ")
+aux=a
+a=b
+b=aux
+print("a=",a)
+print("b=",b)
+
+
+#Ejercicio 15
+print("ingrese la hora, minutos y segundos de salida")
+hora_salida= int(input(print("ingrese la hora")))
+min_salida= int(input(print("ingrese los minutos")))
+seg_salida= int(input(print("ingrese los segundos")))
+seg_del_viaje= 5415
+print("La hora de llegada va a ser:")
+seg_horas= hora_salida*3600
+seg_min= min_salida*60
+seg_total= seg_salida+seg_horas+seg_min+seg_del_viaje
+
+hora_tot= int(seg_total/3600)
+seg_total-=(hora_tot*3600)
+
+min_tot= int(seg_total/60)
+seg_total-= (min_tot*60)
+print(f"{hora_tot}:{min_tot}:{seg_total}")
+
+
+#Ejercicio 16
+nombre=input("Ingresar su nombre")
+apellido1=input("Ingresar  primer apellido")
+apellido2=input("Ingresar segundo apellido")
+iniciales= nombre[0]+apellido1[0]+apellido2[0]
+print(iniciales)
+
+
+#Ejercicio 17
+nombre = input('Ingresa tu nombre: ')
+print(f'Ahora estas en la Matrix, {nombre}')
+
+
+#Ejercicio 18
+costo_inicial=input("Ingrese el costo de la cena:")
+serv = costo_inicial * 0.62
+prop = costo_inicial * 0.10
+costo_final= costo_inicial + serv + prop 
+print(f"El costo final de la cena es de:", {costo_final})
+
+
+#Ejercicio 19
+dia = input('Ingresa el dia en el que naciste: ')
+print()
+mes = input('Ingresa el mes en el que naciste: ')
+print()
+año = input('Ingresa el año en el que naciste: ')
+print()
+print(f'{dia}/{mes}/{año}')
+
+
+#Ejercicio 20
+fecha_nac=input('Ingresar su fecha de nacimiento:')
+print(f'{fecha_nac[0:2]}/{fecha_nac[2:4]}/{fecha_nac[4:9]}')
+
 
 #Ejercicio 21
 print("Antes de su viaje debemos saber lo siguiente: ")
