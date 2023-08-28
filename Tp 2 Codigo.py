@@ -115,6 +115,33 @@ else:
     print("Edad inválida")
 
 
+#Ejercicio 11
+print(f"Bienvenido a la pizzeria Bella Napoli ")
+
+pizza_base = "mozzarella, tomate y "
+
+tipo_pizza = input("¿Qué tipo de Pizza prefiere? \n ¿Vegetariana o Normal?: ")
+tipo_pizza = tipo_pizza.lower()
+
+if tipo_pizza == "vegetariana":
+    ingrediente = input("Elija un ingrediente para su pizza vegetariana (Pimiento o Tofu): ")
+    ingrediente = ingrediente.lower()
+    if (ingrediente == "tofu") or (ingrediente == "pimiento"):
+        print(f"Su pizza {tipo_pizza} contiene {pizza_base}{ingrediente}. \n Disfrute! :D")
+    else:
+        print("Ese ingrediente no está disponible")
+elif tipo_pizza == "normal":
+    ingrediente = input("Elija un ingrediente para su pizza normal (Peperoni, Jamón o Salmón): ")
+    ingrediente = ingrediente.lower()
+    if (ingrediente == "peperoni") or (ingrediente == "salmón") or (ingrediente == "jamón"):
+        print(f"Su pizza {tipo_pizza} contiene {pizza_base}{ingrediente}. \n Disfrute! :D")
+    else:
+        print("Ese ingrediente no está disponible")
+
+
+#Ejercicio 12
+
+
 #Ejercicio 19
 cant_lapiz = int(input("Ingrese la cantidad de lapices a comprar: "))
 precio = 60 * cant_lapiz
