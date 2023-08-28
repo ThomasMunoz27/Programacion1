@@ -139,6 +139,8 @@ elif tipo_pizza == "normal":
         print("Ese ingrediente no está disponible")
 
 
+
+#Ejercicio 12
 ano_actual, ano_cualquiera = int(input("Ingrese el año actual: ")), int(input("Ingrese un año cualquiera: "))
 
 if ano_actual < ano_cualquiera:
@@ -147,6 +149,107 @@ if ano_actual < ano_cualquiera:
 else:
     ano_diff = ano_actual - ano_cualquiera
     print(f"Han pasado {ano_diff} años desde {ano_cualquiera}")
+
+
+
+#Ejercicio 13
+num1, num2 = int(input("Ingrese 2 números: ")), int(input())
+
+mayor = num1
+menor = num2
+if num1 or num2 > 0:
+    if mayor < num2:
+        mayor = num2
+        menor = num1
+
+    if mayor % menor == 0:
+        print(f"{mayor} es múltiplo de {menor}")
+else:
+    print("Se ingresaron números negativos o nulos")
+
+
+
+#Ejercicio 14
+print("Ingresar los coeficientes de una ecuacion de primer grado ax + b = 0")
+a=int(input("a="))
+b=input("b=")
+
+
+if a==0 and b!=0:
+    print("No hay solución")
+elif a!=0 and b== "-x":
+    print("infinitas soluciones")
+elif a!=0 :
+    b=int(b)
+    x=-b/a
+    print("la solución es x= ", x)
+
+
+#Ejercicio 15
+operacion = input("Averiguar el área de un triángulo(t) o de un circulo(c)")
+operacion = operacion.lower()
+if operacion == "t":
+    b = int(input("Ingrese la base del triángulo:"))
+    h = int(input("Ingrese la altura del tiángulo:"))
+    area = (b*a)/2
+    print(f"El área del triángulo es {area}")
+elif operacion == "c":
+    r = int(input("ingrese el radio del circulo: "))
+    area = 3.14 * (r**2)
+    print(f"El área del circulo es de {area}")
+else:
+    print("El valor ingresado no es válido")
+
+
+
+#Ejercicio 16
+a, b = int(input("Ingrese 2 valores: ")), int(input(" "))
+operacion = input(f"Ingrese que operación va a querer ejecutar.\n 1. Suma   2. Multiplicación   3. Resta   4. División: ")
+if operacion == "1":
+    print(f"El resultado es {a+b}")
+elif operacion == "2":
+    print(f"El resultado es {a*b}")
+elif operacion == "3":
+    print(f"El resultado es {a-b}")
+elif operacion == "4":
+    if b == 0:
+        print("No se puede divir entre 0")
+    else:
+        print(f"El resultado es {a/b}")
+else:
+    print("Valor ingresado inválido")
+
+
+
+#Ejercicio 17
+dia_semana = input("Ingrese un día de la semana: ")
+dia_semana = dia_semana.lower()
+
+if dia_semana == "sábado" or dia_semana == "domingo":
+    print("otro mensaje diferente")
+elif dia_semana == "lunes":
+    print("un mensaje")
+elif dia_semana == "viernes":
+    print("VIERNEEEEEEEEESSS!!!")
+elif dia_semana == "martes" or dia_semana == "miércoles" or dia_semana == "jueves":
+    print("otro mensaje")
+else:
+    print("Ese día no existe")
+
+
+
+#Ejercicio 18
+salario_hora = int(input("Ingrese su salario por hora: "))
+horas_trabajadas = int(input("Ingrese las horas trabajadas en el mes: "))
+if horas_trabajadas < 48:
+    print("El mínimo de horas trabajadas son 48 horas")
+elif horas_trabajadas >= 48:
+    sub_salario = salario_hora * 48
+    horas_extra = horas_trabajadas - 48
+    salario_extra = salario_hora * horas_extra + ((salario_hora * horas_extra)*0.1)
+    salario_final = sub_salario + salario_extra
+    print(f"Su salario de este mes es de ${salario_final}")
+
 
 
 #Ejercicio 19
@@ -158,3 +261,21 @@ else:
     precio_final = precio
 
 print(f"Se debe pagar ${precio_final} por los {cant_lapiz} lapices")
+
+
+#Ejercicio 20
+nota1 = int(input("Ingrese la 1er nota: "))
+nota2 = int(input("Ingrese la 2da nota: "))
+nota3 = int(input("Ingrese la 3er nota: "))
+nota4 = int(input("Ingrese la 4ta nota: "))
+if (nota1 > 10 or nota2 > 10 or nota3 > 10 or nota4 > 10) or (nota1 < 0 or nota2 < 0 or nota3 < 0 or nota4 < 0):
+    print("Alguna de las notas no es válida")
+else:
+    promedio = (nota1 + nota2 + nota3 + nota4) / 4
+    if promedio >= 6 :
+        print(f"Su promedio es de {promedio}")
+        print("APROBADO")
+
+    elif promedio < 6:
+        print(f"Su promedio es de {promedio}")
+        print("DESAPROBADO")
