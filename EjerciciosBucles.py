@@ -16,7 +16,7 @@ for cant_msg in range(5):
 
 
 
-#Ejercicio while
+#Ejercicio 2
 
 stop = 1
 total_pair = 0

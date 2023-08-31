@@ -121,14 +121,15 @@ num_inv = b + a
 
 print(f"El número invertido es: {num_inv}")
 
+
 #Ejercicio 14
-a=input("Ingresar el valor numérico de a: ")
-b=input("Ingresar el valor numérico de b: ")
-aux=a
-a=b
-b=aux
-print("a=",a)
-print("b=",b)
+a = int(input("Ingrese 2 números: "))
+b = int(input())
+aux = a
+a = b 
+b = aux
+
+print(f"El primer número pasó a ser {a} y el segúndo a ser {b}")
 
 
 #Ejercicio 15
@@ -136,7 +137,7 @@ print("ingrese la hora, minutos y segundos de salida")
 hora_salida= int(input(print("ingrese la hora")))
 min_salida= int(input(print("ingrese los minutos")))
 seg_salida= int(input(print("ingrese los segundos")))
-seg_del_viaje= 5415
+seg_del_viaje= int(input())
 print("La hora de llegada va a ser:")
 seg_horas= hora_salida*3600
 seg_min= min_salida*60
@@ -151,39 +152,39 @@ print(f"{hora_tot}:{min_tot}:{seg_total}")
 
 
 #Ejercicio 16
-nombre=input("Ingresar su nombre")
-apellido1=input("Ingresar  primer apellido")
-apellido2=input("Ingresar segundo apellido")
-iniciales= nombre[0]+apellido1[0]+apellido2[0]
-print(iniciales)
+nombre  = input("ingrese su nombre: ")
+apellido1 = input("ingrese su 1er apellido: ")
+apellido2 = input("ingrese su 2do apellido: ")
+
+print(f"Sus iniciales son: {nombre[0]}, {apellido1[0]}, {apellido2[0]}")
 
 
 #Ejercicio 17
-nombre = input('Ingresa tu nombre: ')
-print(f'Ahora estas en la Matrix, {nombre}')
+usuario = input("Ingrese su nombre: ")
+print(f"Ahora estas en la matrix, {usuario}")
 
 
 #Ejercicio 18
-costo_inicial=input("Ingrese el costo de la cena:")
-serv = costo_inicial * 0.62
-prop = costo_inicial * 0.10
-costo_final= costo_inicial + serv + prop 
-print(f"El costo final de la cena es de:", {costo_final})
+costo_cena = int(input("ingrese el costo de la cena: "))
+serv = costo_cena * 0.62
+prop = costo_cena * 0.10
+costo_final = costo_cena + serv + prop
+
+print(f"La cuenta es de ${costo_final}")
 
 
 #Ejercicio 19
-dia = input('Ingresa el dia en el que naciste: ')
-print()
-mes = input('Ingresa el mes en el que naciste: ')
-print()
-año = input('Ingresa el año en el que naciste: ')
-print()
-print(f'{dia}/{mes}/{año}')
+dd = input("ingrese su dia de nacimiento: ")
+mm = input("ingrese su mes de nacimiento: ")
+aaaa = input("ingrese su año de nacimiento: ")
+
+print(f"{dd}/{mm}/{aaaa}")
 
 
 #Ejercicio 20
-fecha_nac=input('Ingresar su fecha de nacimiento:')
-print(f'{fecha_nac[0:2]}/{fecha_nac[2:4]}/{fecha_nac[4:9]}')
+fech_nac = input("Ingrese su fecha de nacimiento :")
+
+print(f"{fech_nac[0:2]}/{fech_nac[3:5]}/{fech_nac[6:10]}  ")
 
 
 #Ejercicio 21
