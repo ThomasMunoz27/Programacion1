@@ -1,3 +1,5 @@
+#Ejercicio 2
+
 balance = 0
 logbook = "\n"
 operation = "."
