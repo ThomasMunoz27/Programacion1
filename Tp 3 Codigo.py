@@ -263,3 +263,6 @@ else:
     for i in range(1, fact_num + 1):
         factorial *= i 
 print(f"El factorial de {fact_num} es: {factorial}")
+
+
+#Profe si ve esto podria cambiar mi direccion de Email a thomasnm2004@gmail.com por favor. Muchas gracias <3
