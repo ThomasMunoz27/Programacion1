@@ -1,8 +1,8 @@
-num1 = int(input("Ingrese un número entero mayor que cero para conocer sus divisores: "))
-divisors = []
-if num1 > 0:
-    for i in range(1, num1 + 1):
-        if num1 % i == 0:
-            divisors.append(i)
-
-print(f"Los divisores de {num1} son: {divisors}")
+fact_num = int(input("ingrese el número que desea saber su factoriaL: "))
+factorial = 1
+if fact_num < 0:
+    print("Número ingresado inválido")
+else:
+    for i in range(1, fact_num + 1):
+        factorial *= i 
+print(f"El factorial de {fact_num} es: {factorial}")
