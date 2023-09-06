@@ -1,25 +1,8 @@
-balance = 0
-logbook = "\n"
-operation = "."
-while operation != "":
-    print("\n")
-    operation = input("¿Qué operacion desea realizar? \n Deposito(D) --- Retiro(R).\n Para finalizar ingrese un espacio vacío: ")
-    operation = operation.upper()
-    if operation == "D":
-        deposit = int(input("Ingrese el monto: "))
-        logbook = logbook + f"D {deposit} \n" 
-        balance = balance + deposit
-    elif operation == "R":
-        whitdrew = int(input("Ingrese el monto: "))
-        if balance - whitdrew < 0:
-            print("Saldo insuficiente \n")
-        else:
-            logbook = logbook + f"R {whitdrew} \n" 
-            balance = balance - whitdrew
-    else:
-        print("Operacion ingresada inválida \n")
+num1 = int(input("Ingrese un número entero mayor que cero para conocer sus divisores: "))
+divisors = []
+if num1 > 0:
+    for i in range(1, num1 + 1):
+        if num1 % i == 0:
+            divisors.append(i)
 
-print(f"Bitácora: \n {logbook}")
-
-print(f"Saldo final: {balance}")
-
+print(f"Los divisores de {num1} son: {divisors}")
