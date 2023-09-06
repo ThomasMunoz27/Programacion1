@@ -11,12 +11,16 @@ mm = int(aux[aux.find("/")+1:])
 if (dia == "lunes") or (dia == "martes") or (dia == "miercoles") or (dia == "jueves") or (dia == "viernes"):
     if dd <= 31 and mm <= 12:
         if (dia == "lunes") or (dia == "martes") or (dia == "miercoles"):
-            print("Ese día hubo examen")
-            aprob = int(input("Ingrese la cantididad de alumnos aprobados: "))
-            des_aprob = int(input("Ingrese la cantididad de alumnos desaprobados:"))
-            alumnos = aprob + des_aprob
-            porc_aprob = (aprob * 100) / alumnos
-            print(f"El porcentaje de alumnos aprobados es del {porc_aprob}%")
+            exam = input("¿Ese día hubo examen?\n Si(Y)/No(N) ")
+            exam = exam.lower()
+            if exam == "y":
+                aprob = int(input("Ingrese la cantididad de alumnos aprobados: "))
+                des_aprob = int(input("Ingrese la cantididad de alumnos desaprobados:"))
+                alumnos = aprob + des_aprob
+                porc_aprob = (aprob * 100) / alumnos
+                print(f"El porcentaje de alumnos aprobados es del {porc_aprob}%")
+            elif exam == "n":
+                print("Ese día no hubo examen")
         if (dia == "jueves"):
             asist = int(input("Ingrese el porcentaje de asistencia a las clases habladas"))
             if asist >= 50:
