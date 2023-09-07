@@ -2,7 +2,7 @@
 
 word = input("Ingrese una palabra para repetirla: ")
 
-for i in range(11):
+for i in range(10):
     print(word)
 
 
@@ -14,13 +14,14 @@ for i in range(age):
 
 
 #Ejercicio 3
-num = int(input("Ingrese un número positivo"))
-
+num = int(input("Ingrese un número positivo: "))
+odd_list = []
 if num < 0:
     input("Número ingresado inválido")
 else:
-    for i in range(1, num, 2):
-        print(i)
+    for i in range(1, num + 1, 2):
+        odd_list.append(i)
+print(odd_list)
 
 
 #Ejercicios 4
@@ -44,7 +45,9 @@ gains = 0
 
 while years <= total_years:
     gains = gains + (to_invert * (anual_int / 100))
+    to_invert += gains
     print(f"Las ganacias del año {years} son: ${gains}")
+    print(f"Este año, en total tiene: ${to_invert}\n")
     years = years + 1
 
 
