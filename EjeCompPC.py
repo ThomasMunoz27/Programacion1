@@ -25,7 +25,7 @@ nombre = "Thomas"
 print(nombre)
 
 #Ejercicio 6
-precio = 1500
+precio = 1500.00
 print(precio)
 
 #Ejercicio 7

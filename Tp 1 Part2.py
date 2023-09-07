@@ -1,7 +1,9 @@
 #Ejercicio 1
 base = 3
 altura = 6
+perimetro = (base * 2) + (altura * 2)
 area = base * altura
+print(f"El perimetro es: {perimetro}")
 print(area)
 
 
@@ -166,7 +168,7 @@ print(f"Ahora estas en la matrix, {usuario}")
 
 #Ejercicio 18
 costo_cena = int(input("ingrese el costo de la cena: "))
-serv = costo_cena * 0.62
+serv = costo_cena * 0.062
 prop = costo_cena * 0.10
 costo_final = costo_cena + serv + prop
 
