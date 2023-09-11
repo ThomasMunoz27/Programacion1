@@ -3,17 +3,22 @@
 
 balance = 0
 logbook = "\n"
-operation = "."
-while operation != "":
+entry = "."
+while entry != "":
     print("\n")
-    operation = input("¿Qué operación desea realizar? \n Deposito(D) --- Retiro(R).\n Para finalizar ingrese un espacio vacío: ")
-    operation = operation.upper()
+    entry = input("¿Qué operación desea realizar? \n Deposito(D) --- Retiro(R), e ingrese el monto.\n Para finalizar ingrese un espacio vacío: ")
+    if entry != "":
+        operation = entry[0]
+        entry = entry.split()
+        del entry[0]
+        sum = int(entry[0])
+        operation = operation.upper()
     if operation == "D":
-        deposit = int(input("Ingrese el monto: "))
+        deposit = sum
         logbook = logbook + f"D {deposit} \n" 
         balance = balance + deposit
     elif operation == "R":
-        whitdrew = int(input("Ingrese el monto: "))
+        whitdrew = sum
         if balance - whitdrew < 0:
             print("Saldo insuficiente \n")
         else:
@@ -81,3 +86,26 @@ for i in num_list:
         print("El número no está")
 
 print("Fin del programa")
+
+
+#Ejercicio 7
+option = 0
+strawberry = 0
+peach = 0
+avocado = 0
+while option != 4444:
+    option = int(input("Elija una opción. \n Frutilla(1) \n Durazno(2) \n Palta(3) \n Para salir ingrese cero(0)"))
+    if option == 1:
+        strawberry +=1
+        print(f"Tienes {strawberry} frutillas")
+    elif option == 2:
+        peach += 1
+        print(f"Tienes {peach} duraznos")
+    elif option == 3:
+        avocado += 1
+        print(f"Tienes {avocado} paltas")
+    elif option == 0:
+        break
+    else:
+        print("Elección inválida. Intente otra vez")
+print("Saliste")

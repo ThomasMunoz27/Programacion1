@@ -1,16 +1,19 @@
-to_invert = int(input("Ingrese la cantidad de dinero a invertir: "))
-anual_int = int(input("Ingrese el interés anual: "))
-total_years = int(input("Ingrese la cantidad de años: "))
-
-years = 1
-
-
-while years <= total_years:
-    gains_t = 0
-    parcial_gains = 0
-    gains_t = gains_t + (to_invert * (anual_int / 100))
-    parcial_gains = parcial_gains + (to_invert * (anual_int / 100))
-    to_invert += parcial_gains
-    print(f"Las ganacias del año {years} son: ${gains_t}")
-    print(f"Este año, en total tiene: ${to_invert}\n")
-    years = years + 1
+option = 0
+strawberry = 0
+peach = 0
+avocado = 0
+while option != 4444:
+    option = int(input("Elija una opción. \n Frutilla(1) \n Durazno(2) \n Palta(3) \n Para salir ingrese cero(0)"))
+    if option == 1:
+        strawberry +=1
+        print(f"Tienes {strawberry} frutillas")
+    elif option == 2:
+        peach += 1
+        print(f"Tienes {peach} duraznos")
+    elif option == 3:
+        avocado += 1
+        print(f"Tienes {avocado} paltas")
+    elif option == 0:
+        break
+    else:
+        print("Elección inválida. Intente otra vez")
