@@ -1,4 +1,4 @@
-#Ejercicio 1
+#Ejercicio 1 inglés
 x = 0
 while x < 30:
     x += 1
@@ -9,6 +9,14 @@ while x < 30:
     else:
         break
 print(f"Se rompió la ejecución del bucle cuando x valía: {x}")
+
+#Ejercicio 1
+sentence= input("Escribe una oración: ").upper()
+while sentence:
+    if sentence[-1]==" ":
+        break
+    sentence+=". "+ input("Escribe una oración: ").upper()
+print(sentence)
 
 #Ejercicio 2
 

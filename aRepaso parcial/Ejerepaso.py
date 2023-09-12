@@ -1,15 +1,3 @@
-"""Es un programa de una tienda mayorista de ropa para armar pedidos. Va a contener: 
-    Lista de ropa con el stock dsopinible que puede ver el usuario con los precios
-    preguntar quien hace el pedido.
-    preguntar ¿Cuantos tipos de articulos va a comprar? (para armar un for)
-    Preguntar el articlulo y la cantidad del articulo que va a comprar
-    (cada caja tiene un máximo de 10 articulos)
-    +
-    Al final tiene que mostrar la cantidad total de articulos y la cantidad de cajas que se armaron.
-
-    Preguntar el método de pago y hacer un recago del 15% si se paga con tarjeta.
-    Si la compra es en efectivo y supera los $100000 pesos el envío es gratis.
-    """
 
 
 #Metodo de pago

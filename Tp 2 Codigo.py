@@ -17,8 +17,8 @@ else:
 
 
 #ejercicio 3
-name1 = input("Ingrese el nombre de la 1ra persona: ")
-name2 = input("Ingrese el nombre de la 2da persona: ")
+name1 = input("Ingrese el nombre de la 1ra persona: ").lower()
+name2 = input("Ingrese el nombre de la 2da persona: ").lower()
 name1_inicial = name1[0]
 name2_inicial = name2[0]
 
@@ -87,7 +87,7 @@ else:
 #Ejercicio 9
 sex = input("Ingrese su sexo(Hombre/Mujer): ")
 sex = sex.lower()
-name = input("Ingrese su nombre: ")
+name = input("Ingrese su nombre: ").lower()
 name_inicial = name[0]
 
 if name_inicial < "m" and sex == "mujer":
@@ -165,7 +165,7 @@ if num1 or num2 > 0:
     if mayor % menor == 0:
         print(f"{mayor} es múltiplo de {menor}")
     else:
-        print(f"")
+        print(f"{mayor} no es múltiplo de {menor}")
 else:
     print("Se ingresaron números negativos o nulos")
 
