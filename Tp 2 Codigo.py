@@ -161,9 +161,11 @@ if num1 or num2 > 0:
     if mayor < num2:
         mayor = num2
         menor = num1
-
+    print(f"El número {mayor} es mayor que {menor}")
     if mayor % menor == 0:
         print(f"{mayor} es múltiplo de {menor}")
+    else:
+        print(f"")
 else:
     print("Se ingresaron números negativos o nulos")
 
