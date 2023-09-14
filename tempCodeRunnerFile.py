@@ -1,14 +1,13 @@
-abc = "abcdefghijklmnñopqrstuvwxyz"
+print("Ingresar los coeficientes de una ecuacion de primer grado ax + b = 0")
+a=int(input("a="))
+b=input("b=")
 
-corr = int(input("Ingrese el corrimiento: "))
-for cant_msg in range(5):
-    msg = input(f"Ingrese el menasaje para el oficial {cant_msg+1} a encriptar: ")
-    msg_encript = ""
-    for letter in msg:
-        frts_l = (abc.find(letter))
-        if letter == " ":
-            msg_encript = msg_encript + " "
-        else:
-            msg_encript = msg_encript + abc[(frts_l + corr)%27]
-    print(msg_encript)
 
+if a==0 and b!=0:
+    print("No hay solución")
+elif a!=0 and b== "-x":
+    print("infinitas soluciones")
+elif a!=0 :
+    b=int(b)
+    x=-b/a
+    print("la solución es x= ", x)

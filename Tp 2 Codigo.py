@@ -174,12 +174,12 @@ else:
 #Ejercicio 14
 print("Ingresar los coeficientes de una ecuacion de primer grado ax + b = 0")
 a=int(input("a="))
-b=input("b=")
+b=int(input("b="))
 
 
 if a==0 and b!=0:
     print("No hay solución")
-elif a!=0 and b== "-x":
+elif a==0 and b== 0:
     print("infinitas soluciones")
 elif a!=0 :
     b=int(b)
