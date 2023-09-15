@@ -83,16 +83,21 @@ print(f"Se ingresaron un total de {prime_numers} números primos")
 year1 = int(input("Ingrese el primer año: "))
 year2 = int(input("Ingrese el segundo año: "))
 year_list = []
+year_mult = []
 
 
 for i in range(year1, year2 + 1):
     if (i % 4 == 0) and i % 100 != 0 or i % 400 == 0:
         year_list.append(i)
     elif i % 10 == 0:
-        year_list.append(i)
+        year_mult.append(i)
+
+
+
 
 print(f"Los años bisiestos entre los ingresados son: {year_list} ")
-
+if (len(year_mult) != 0):
+    print("Los años múltiplos de 10 son: ", year_mult)
 
 #Ejercicio 5
 for i in range(1,21):

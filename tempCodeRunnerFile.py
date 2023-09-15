@@ -1,13 +1,30 @@
-print("Ingresar los coeficientes de una ecuacion de primer grado ax + b = 0")
-a=int(input("a="))
-b=input("b=")
 
+balance = 0
+logbook = "\n"
+entry = "."
+while entry != "":
+    print("\n")
+    entry = input("¿Qué operación desea realizar? \n Deposito(D) --- Retiro(R), e ingrese el monto.\n Para finalizar ingrese un espacio vacío: ")
+    if entry != "":
+        operation = entry[0]
+        entry = entry.split()
+        del entry[0]
+        sum = int(entry[0])
+        operation = operation.upper()
+    if operation == "D":
+        deposit = sum
+        logbook = logbook + f"D {deposit} \n" 
+        balance = balance + deposit
+    elif operation == "R":
+        whitdrew = sum
+        if balance - whitdrew < 0:
+            print("Saldo insuficiente \n")
+        else:
+            logbook = logbook + f"R {whitdrew} \n" 
+            balance = balance - whitdrew
+    else:
+        print("Operación ingresada inválida \n")
 
-if a==0 and b!=0:
-    print("No hay solución")
-elif a!=0 and b== "-x":
-    print("infinitas soluciones")
-elif a!=0 :
-    b=int(b)
-    x=-b/a
-    print("la solución es x= ", x)
+print(f"Bitácora: \n {logbook}")
+
+print(f"Saldo final: {balance}")
