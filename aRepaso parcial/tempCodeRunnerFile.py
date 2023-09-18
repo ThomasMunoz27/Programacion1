@@ -1,25 +1,17 @@
-salary = 20000
-aux = 0
-conf_asist = input("¿Asistió todo el més? \n (Si/No): ").lower
-if conf_asist == "si":
-    
-        extra_hours = int(input("¿Cuantas horas trabajó los domingos? (min:3 Max:10)"))
-        if extra_hours < 3 or extra_hours > 10: 
-            print("Cantidad de horas extra ingresadas inválido. Ingrese de vuelta. \n")
-        elif extra_hours >=3 or extra_hours <= 5:
-            salary += salary * 0.03
-            
-        elif extra_hours >=6 or extra_hours <= 10:
-            salary += salary * 0.1
-            
+            name = "thomy"
+            print(f"Elejiste juego de palabras, {name}. Procederé a explicarte el funcionamiento")
+            print(f"{name}, debes ingresar una frase. Luego se mostrarán la cantidad de cada vocal que contiene la frase \n Empecemos!!!")
+            entry_phrase = input(f"{name}, ingresa una frase: ")
 
-elif conf_asist == "no":
-        extra_hours = int(input("¿Cuantas horas trabajó los domingos?(Min:3 Max:10)"))
-        if extra_hours < 3 or extra_hours > 10: 
-                print("Cantidad de horas extra ingresadas inválido. Ingrese de vuelta. \n")
-        else:
-            salary += salary * 0.02
-            
-
-
-print(f"Su salario final es de {salary}")
+            for i in entry_phrase:
+                if entry_phrase[i] == "a":
+                    a_vowel += 1
+                if entry_phrase[i] == "e":
+                    e_vowel += 1
+                if entry_phrase[i] == "i":
+                    i_vowel += 1
+                if entry_phrase[i] == "o":
+                    o_vowel += 1
+                if entry_phrase[i] == "u":
+                    u_vowel += 1
+            print(f"Muy bien {name}! Veamos los resultados. \n Cantidad de a: {a_vowel} \n Cantidad de e: {e_vowel} \n Cantidad de i: {i_vowel} \n Cantidad de o: {o_vowel} \n Cantidad de u: {u_vowel} \n")

@@ -54,9 +54,9 @@ print(f"Usted ingresó {cant_words} palabras")
 
 
 #Ejercicio 4
-salary = 20000
+salary = 80000
 aux = 0
-conf_asist = input("¿Asistió todo el més? \n (Si/No): ").lower
+conf_asist = input("¿Asistió todo el més? \n (Si/No): ").lower()
 if conf_asist == "si":
     while aux == 0:
         extra_hours = int(input("¿Cuantas horas trabajó los domingos? (min:3 Max:10)"))
@@ -71,7 +71,7 @@ if conf_asist == "si":
 
 elif conf_asist == "no":
     while aux == 0:
-        extra_hours = int(input("¿Cuantas   horas trabajó los domingos?(Min:3 Max:10)"))
+        extra_hours = int(input("¿Cuantas horas trabajó los domingos?(Min:3 Max:10)"))
         if extra_hours < 3 or extra_hours > 10: 
                 print("Cantidad de horas extra ingresadas inválido. Ingrese de vuelta. \n")
         else:
@@ -80,3 +80,46 @@ elif conf_asist == "no":
 
 
 print(f"Su salario final es de {salary}")
+
+#Ejercicio 5
+try:
+    num1, num2 = int(input("Ingrese el 1er número: ")), int(input("Ingrese el 2do número: "))
+    operation = ""
+
+    if num1 == num2:
+        operation = "Multiplicación"
+        result = num1 * num2
+    elif num1 > num2:
+        operation = "Resta"
+        result = num1 - num2
+    else:
+        result = num1 + num2
+        operation = "Suma"
+
+    print(f"El resultado de la {operation} es: {result}")
+except ValueError:
+    print("Pelotudo, tenés que ingresar números")
+
+
+
+#Ejercicio 6
+try:
+    print("Bienvenido a ANSES")
+    age = int(input("Ingrese su edad: "))
+    work_years = int(input("¿Cuál es la antigüedad en su empleo en años?: "))
+    if age < 25 or (age < 60 and work_years < 25):
+        print("Usted no se puede jubilar")
+    else:
+        if work_years > age:
+            print("Usted no pudo haber trabajado más años de los que tiene de vida")
+        else:
+            if age >= 60:
+                if work_years < 25:
+                    type_retirement = "por edad"
+                else:
+                    type_retirement = "por antigüedad adulta"
+            elif age < 60 and work_years >= 25:
+                type_retirement = "por antigüedad joven"
+            print(f"El tipo de jubilación adcrita para esta persona será {type_retirement}")
+except ValueError:
+    print("Valor ingresado inválido")
