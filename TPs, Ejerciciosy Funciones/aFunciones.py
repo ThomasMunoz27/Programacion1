@@ -28,7 +28,7 @@ def write_(cant):
         g_word.append("_")
     return g_word
 
-#mostar la cantidad de veces que aparece la letra ingresada
+#mostar la cantidad de veces que aparece la letra ingresada en la palabra
 def timesLetterAppears(aux, letter):
     if aux == 1:
         print(f"\n Correcto!. La palabra lleva una '{letter}'")
@@ -37,6 +37,32 @@ def timesLetterAppears(aux, letter):
     elif aux == 3:
         print(f"\n Correcto!. La palabra lleva tres '{letter}'")
 
+##Funciones TP 5
+#Funion Eje 1
+#validar DNI
+def validDni(num):
+    if len(str(num)) == 7 or len(str(num)) == 8:
+        return True
+    else:  
+        return False
+    
 
+#Funcion Eje 3
+#Buscar apellido
+def searchLastName(entryName):
+    if len(entryName) >= 3:
+        return  entryName[2]
+    elif len(entryName) == 2:
+        return entryName[1]
+    
+#Obtener los primero 3 números del dni
+def getDniId(dni):
+    if len(str(dni)) == 8:
+        return dni // 100000
+    else:
+        return dni // 10000
 
-
+def createId(name, lastName, numId):
+    prevId = ""
+    prevId += name[0] + str(len(lastName)) + str(numId)
+    return prevId

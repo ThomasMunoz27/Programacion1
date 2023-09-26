@@ -17,7 +17,7 @@ while True:
     aux_correct = 0
     #si la lista de letras reemplazada es distinta de la palabra entra al condicional
     if (''.join(see_word)) != chosen_word and attemps > 0:
-        print(f"La palabra tiene {num_letters} letras. Tienes {attemps} intentos. \n {(' ').join(see_word)}. \nPara ver la letras ingresadas incorrectamente ingrese '0'")
+        print(f"La palabra tiene {num_letters} letras. Tienes {attemps} intentos. \n {(' ').join(see_word)} \nPara ver la letras ingresadas incorrectamente ingrese '0'")
         entry_letter = input("Ingrese la letra a adivinar: ").lower()
         #verifica que se ingrese un input correcto
         if len(entry_letter) > 1:
