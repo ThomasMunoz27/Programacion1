@@ -43,15 +43,12 @@ while True:
                             attemps -= 1
                             print(f"Letra incorrecta.")
                             incorrect_letters.append(entry_letter)
-                if aux_correct == 1:
-                    print(f"\n Correcto!. La palabra lleva una '{entry_letter}'")
-                elif aux_correct == 2:
-                    print(f"\n Correcto!. La palabra lleva dos '{entry_letter}'")
-                elif aux_correct == 3:
-                    print(f"\n Correcto!. La palabra lleva tres '{entry_letter}'")
+                funcion.timesLetterAppears(aux_correct, entry_letter)
+    #Mensaje de Game Over
     elif attemps == 0:
         print(f"PERDISTE, ERES UN FRACASO. La palabra era: \n {chosen_word}")
         break
+    #Mensaje de Victoria
     else:
             print(f"\n FELICIDADES!!! \n Has completado la palabra '{chosen_word}' y te sobraron {attemps} intentos. ")
             break
