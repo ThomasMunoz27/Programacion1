@@ -66,3 +66,22 @@ def createId(name, lastName, numId):
     prevId = ""
     prevId += name[0] + str(len(lastName)) + str(numId)
     return prevId
+
+
+#Funcion Eje 6
+def space_between_letters(word):
+    # Use compresion de listas para hacer este código.
+    spaced_word = ''.join([c + ' ' for c in word if c != ' '])
+    return spaced_word
+
+
+#Funcion Eje 7
+def calc_min_and_max(num_list):
+    n_min = 100000000000000000
+    n_max = 0
+    for i in range(len(num_list)):
+        if num_list[i] < n_min:
+            n_min = num_list[i]
+        elif num_list[i] > n_max:
+            n_max = num_list[i]
+    return n_min, n_max

@@ -42,3 +42,28 @@ try:
     print("Adios.")
 except ValueError:
     print("Ingrese carácteres válidos para la correcta ejecución")
+
+
+
+#Ejercicio 6
+import aFunciones as funcion
+phrase = input("Ingrese una oración: ")
+print(funcion.space_between_letters(phrase))
+
+
+#Ejercicio 7
+import aFunciones as funcion
+num_list = []
+while True:
+    try:
+        while True:
+            entry_num = (input("Ingrese números. Para deterse y mostrar el máxumo y el mínimo ingrese 'Salir': ")).lower()
+            if entry_num == "salir":
+                break
+            else:
+                num_list.append(int(entry_num))
+            min, max = funcion.calc_min_and_max(num_list)
+        print(f"El número ingresado mas bajo es: {min}. \nEl número ingresado mas alto es {max}")
+        break
+    except ValueError:
+        print("Ingrese un num")
