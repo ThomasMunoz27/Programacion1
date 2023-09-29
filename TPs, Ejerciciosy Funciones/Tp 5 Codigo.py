@@ -63,7 +63,32 @@ while True:
             else:
                 num_list.append(int(entry_num))
             min, max = funcion.calc_min_and_max(num_list)
-        print(f"El número ingresado mas bajo es: {min}. \nEl número ingresado mas alto es {max}")
+        print(f"El número ingresado mas bajo es: {min}. \nEl número ingresado mas alto es {max}.")
         break
     except ValueError:
         print("Ingrese un num")
+
+
+#Ejercicio 13
+import aFunciones as funcion
+vector = [
+
+]
+dimension = 3
+for i in range(dimension):
+    valor = int(input(f"Ingrese el valor para la componente {i + 1}: "))
+    vector.append(valor)
+print(vector)
+vector_modul = funcion.calc_modulo_vector(vector)
+print(f"El módulo del vector es: {vector_modul}")
+
+
+
+#Ejercicio 14
+import aFunciones as funcion
+new_num = int(input("Ingrese un número: "))
+prime_num = funcion.verify_prime_number(new_num)
+if prime_num == True:
+    print("El número es primo")
+else: 
+    print("El número no es primo")

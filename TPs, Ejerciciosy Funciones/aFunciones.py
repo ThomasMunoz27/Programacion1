@@ -85,3 +85,25 @@ def calc_min_and_max(num_list):
         elif num_list[i] > n_max:
             n_max = num_list[i]
     return n_min, n_max
+
+
+#Funcion Eje 13
+import math
+def calc_modulo_vector(array):
+    aux_sum = 0
+    for i in array:
+        aux_sum += i**2
+    modul = math.sqrt(aux_sum)
+    return modul
+
+
+#Funcion Eje 14
+def verify_prime_number(num):
+    divisors = 0
+    for i in range(num, 0, -1):
+        if num % i == 0:
+            divisors += 1
+    if divisors <= 2:
+        return True
+    else:
+        return False
