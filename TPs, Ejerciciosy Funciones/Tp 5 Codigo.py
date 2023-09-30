@@ -11,7 +11,10 @@ while True:
         print("Por favor ingrese un numero de DNI válido")
 
 #Ejercicio 2
-
+import aFunciones as funcion
+phrase = input("Ingrese una frase: ").strip()
+num_word = funcion.last_word_num(phrase)
+print(f"La longitúd de la última palabra de la oración es: {num_word}")
 
 
 #Ejercicio 3
@@ -42,6 +45,23 @@ try:
     print("Adios.")
 except ValueError:
     print("Ingrese carácteres válidos para la correcta ejecución")
+
+
+#Ejercicio 4
+import aFunciones as funcion
+num1 = int(input("Ingrese el primer número: "))
+num2 = int(input("Ingrese el segundo número: "))
+funcion.multiples(num1, num2)
+
+
+#Ejercicio 5
+import aFunciones as funcion
+cant_days = int(input("Ingrese la cantidad de días a los que se les va a calcular la media de temperatura: "))
+for i in range(0, cant_days):
+    temp_max = float(input(f"Ingrese la máxima del día {i + 1}: "))
+    temp_min = float(input(f"Ingrese la mínima del día {i + 1}: "))
+    median = funcion.calc_median(temp_max, temp_min)
+    print(f"La media del día {i + 1} es : {median}")
 
 
 
@@ -92,3 +112,7 @@ if prime_num == True:
     print("El número es primo")
 else: 
     print("El número no es primo")
+
+
+#Ejercicio 15
+num_fact = int 
