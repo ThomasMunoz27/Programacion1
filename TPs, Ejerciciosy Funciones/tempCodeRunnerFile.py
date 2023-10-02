@@ -1,27 +1,16 @@
 import aFunciones as funcion
 try:
+    frecuency = 0
+    num = int(input("Ingrese un número entero: "))
+    #separar el número
+    num = funcion.separate_num(num)
     while True:
-        vDni = False
-        fullName = input("Ingrese el nombre completo del socio. \nPara finalizar y salir ingrese un epacio en blanco: ")
-        fullName = fullName.split()
-        if fullName == "" or fullName == " ":
-            break
-        if len(fullName) < 2: 
-            print("Ingrese al menos 1 nombre y 1 apellido")
+        digit = (input("Ingrese un dígito: "))
+        if len(digit) > 1:
+            print("Ingrese solamente un dígito")
         else:
-            while vDni == False:
-                try:
-                    dni = int(input("Ingrese su DNI: "))
-                    vDni = funcion.validDni(dni)
-                    if vDni == False:
-                        print("Ingrese un DNI válido")
-                except ValueError:
-                    print("Ingrese carácteres válidos para la correcta ejecución")
-            lastName = funcion.searchLastName(fullName)
-            dniId = funcion.getDniId(dni)
-            finalId = funcion.createId(fullName, lastName, dniId)
-
-            print(f" Nombre: {' '.join(fullName)} \n DNI: {dni} \n ID: {finalId}")
-    print("Adios.")
+            break
+    frecuency = funcion.determ_frec(digit, frecuency, num)
+    print(f"El número {digit} aparece {frecuency} veces en el número {('').join(num)}")
 except ValueError:
-    print("Ingrese carácteres válidos para la correcta ejecución")
+    print("Ingrese solamente números")

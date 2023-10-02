@@ -45,7 +45,13 @@ def validDni(num):
         return True
     else:  
         return False
-    
+
+
+#Funcion Eje 2
+def last_word_num(sentence):
+    phrase_list = sentence.split()
+    cant_letters = len(phrase_list[-1])
+    return cant_letters
 
 #Funcion Eje 3
 #Buscar apellido
@@ -67,6 +73,19 @@ def createId(name, lastName, numId):
     prevId += name[0] + str(len(lastName)) + str(numId)
     return prevId
 
+
+#Funcion Eje 4
+def multiples(num_a, num_b):
+    if num_a % num_b == 0:
+        print(f"{num_a} es múltiplo de {num_b} ")
+    if num_b % num_a == 0:
+        print(f"{num_b} es múltiplo de {num_a} ")
+
+
+#Funcion eje 5
+def calc_median(max, min):
+    median = (max + min) / 2
+    return median
 
 #Funcion Eje 6
 def space_between_letters(word):
@@ -107,3 +126,15 @@ def verify_prime_number(num):
         return True
     else:
         return False
+
+
+#Funcion Eje 16
+def separate_num(num):
+    aux = list(str(num))
+    return aux
+
+def determ_frec(dig, frec, separate_num):
+    for i in separate_num:
+        if dig == i:
+            frec +=1
+    return frec
