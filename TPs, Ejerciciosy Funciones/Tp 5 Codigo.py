@@ -115,4 +115,19 @@ else:
 
 
 #Ejercicio 15
-num_fact = int 
+import aFunciones as funcion
+cant_entries = 0
+while True:
+        try:
+            num_fact = int(input("Ingrese un número para saber su factorial. \nIngrese un número negativo para parar: "))
+            if num_fact < 0:
+                break
+            else:
+                factorial = funcion.calc_factorial(num_fact)
+                cant_entries += funcion.calc_entries(factorial)
+                print(f"el factorial del número {num_fact} es: {factorial}")
+        except ValueError:
+            print("Ingrese un número")
+print(f"Usted ha calculado los factoriales de {cant_entries} números")
+
+

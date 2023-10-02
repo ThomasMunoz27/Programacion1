@@ -126,3 +126,22 @@ def verify_prime_number(num):
         return True
     else:
         return False
+
+
+#Funcion Eje 15
+def calc_factorial(num):
+    fact = [0, 1]
+    if num == 0:
+        fact = 1
+    else:
+        for i in range(0, num):
+            sum_fac = 0
+            fact.append(fact)
+    return fact
+
+def calc_entries(aux_num):
+    if aux_num >= 0:
+        return 1
+
+
+
