@@ -13,7 +13,7 @@ def sum_digits(num1):
 ##Funciones Ahorcado
 #Funcion elejir palabra
 def chose_word():
-    word_list = ["sexo", "manzana", "mouse", "baile", "oreja", "rojo", "pierna", "pelo", "gato", "perro", "ciervo", "mora", "girasol", "mate", "eclipse", "piano", "silla", "rata", "pera", "esclavo", "judío", "salchicha", "comida", "zapato", "ñandu", "ñoqui", "queso", "timbre", "tornillo", "invierno", "azucar", "sal", "amanecer", "espía", "iglesia", "operador", "uva", "utensilio", "unicornio", "arco", "margarita", "esternocleidomastoideo", "bailar", "fumar", "alcaucíl", "llovizna"]
+    word_list = ["sexo", "manzana", "mouse", "baile", "oreja", "rojo", "pierna", "pelo", "gato", "perro", "ciervo", "mora", "girasol", "mate", "eclipse", "piano", "silla", "rata", "pera", "esclavo", "judío", "salchicha", "comida", "zapato", "ñandu", "ñoqui", "queso", "timbre", "tornillo", "invierno", "azucar", "sal", "amanecer", "espía", "iglesia", "operador", "uva", "utensilio", "unicornio", "arco", "margarita", "esternocleidomastoideo", "bailar", "fumar", "alcaucíl", "llovizna", "porro", "lelo", "lol", "medialuna", "fernanfloo"]
     return  word_list[ran.randrange(0, len(word_list))]
 
 #longitud de palabra
@@ -143,5 +143,16 @@ def calc_entries(aux_num):
     if aux_num >= 0:
         return 1
 
+
+#Funcion Eje 16
+def separate_num(num):
+    aux = list(str(num))
+    return aux
+
+def determ_frec(dig, frec, separate_num):
+    for i in separate_num:
+        if dig == i:
+            frec +=1
+    return frec
 
 

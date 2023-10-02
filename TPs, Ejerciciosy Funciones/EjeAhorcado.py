@@ -3,9 +3,9 @@ import aFunciones as funcion
 import random as ran
 
 #se elije una palabra aleatorea de una lista de palabras
-chosen_word = funcion.chose_word()
-#se cuenta y almacena la cantidad de letras de la palabra
+chosen_word = funcion.chose_word()#se cuenta y almacena la cantidad de letras de la palabra
 num_letters = funcion.word_large(chosen_word)
+
 #número de intentos.
 attemps = 6
 #se crea la palabra pero con las letras reemplazadas por (_)

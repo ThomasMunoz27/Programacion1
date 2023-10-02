@@ -24,3 +24,4 @@ print(total)
 
 
 
+print(10 % 3)
