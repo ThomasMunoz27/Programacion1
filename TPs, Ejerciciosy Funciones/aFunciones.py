@@ -106,6 +106,58 @@ def calc_min_and_max(num_list):
     return n_min, n_max
 
 
+#Funciones Eje 8
+import math
+def calc_area(rad):
+    pre_area = math.pi * (rad**2)
+    return pre_area
+
+
+def calc_perimeter(rad):
+    pre_perimeter = (rad*2) * math.pi
+    return pre_perimeter
+
+
+#Funciones Eje 9
+def login(user, passw):
+    if user == "usuario1" and passw == "asdasd":
+        return True
+    else:
+        return 0
+    
+
+#Funcion Eje 10
+def purchase_total(prices_percentages):
+    prices=list(prices_percentages.keys())
+    percentages=list(prices_percentages.values())
+    total=0
+    for n in range(len(prices)):
+        calculation=prices[n]*(1-percentages[n])
+        total+=calculation
+    return total
+
+
+#Funcion Eje 11
+def swap(names):
+    apply_change = ""
+    apply_change = names.swapcase()
+    return apply_change
+
+
+def call_other_f(names):
+    change_name = ""
+    change_name = swap(names)
+    return change_name
+
+#Funcion Eje 12
+def phrase_to_dict(phrase):
+    new_dict = {}
+    temporal_array = phrase.split(" ")
+    for word in temporal_array:
+        new_dict[word] = len(word)
+    return new_dict
+
+
 #Funcion Eje 13
 import math
 def calc_modulo_vector(array):
@@ -130,13 +182,12 @@ def verify_prime_number(num):
 
 #Funcion Eje 15
 def calc_factorial(num):
-    fact = [0, 1]
+    fact = 1
     if num == 0:
         fact = 1
     else:
-        for i in range(0, num):
-            sum_fac = 0
-            fact.append(fact)
+        for i in range(1, num + 1):
+            fact *= i
     return fact
 
 def calc_entries(aux_num):
@@ -155,4 +206,41 @@ def determ_frec(dig, frec, separate_num):
             frec +=1
     return frec
 
+#Funciones Eje 17
+import math
+def is_prime(num):
+    if num < 2:
+        return False
+    if num == 2:
+        return True
+    if num % 2 == 0:
+        return False
+    for i in range(3, int(num**0.5) + 1, 2):
+        if num % i == 0:
+            return False
+    return True
+
+
+
+
+def entering_prime_numbers():
+    most_number = 0
+    while True:
+        num = int(input('Ingresa un numero primo, la lectura finalizara cuando ingreses un numero no primo:\n'))
+        if is_prime(num):
+            prime_sum = 0
+            digit_frecuence = 0
+            for digit in str(num):
+                prime_sum += int(digit)
+            print(f'La suma de los digitos del numero primo ingresado es: {prime_sum}')
+            opt_frecuence = input('Ingresa un digito del cual quieres saber la frecuencia en el numero ingresado:\n')
+            for digit in str(num):
+                if digit == opt_frecuence:
+                    digit_frecuence += 1
+            if num > most_number:
+                most_number = num
+            print(f'La frecuencia del digito "{opt_frecuence}" en "{num}" es: {digit_frecuence}')
+        else:
+            print(f'El numero ingresado no es primo, el mayor numero que ingresaste en esta sesion fue "{most_number}"  y su factorial es: {math.factorial(most_number)}\n Saliendo...')
+            break
 
