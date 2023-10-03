@@ -21,27 +21,27 @@ print(f"La longitúd de la última palabra de la oración es: {num_word}")
 import aFunciones as funcion
 try:
     while True:
-        vDni = False
-        fullName = input("Ingrese el nombre completo del socio. \nPara finalizar y salir ingrese un epacio en blanco: ")
-        fullName = fullName.split()
-        if fullName == "" or fullName == " ":
+        v_dni = False
+        full_name = input("Ingrese el nombre completo del socio. \nPara finalizar y salir ingrese un epacio en blanco: ")
+        full_name = full_name.split()
+        if full_name == "" or full_name == " ":
             break
-        if len(fullName) < 2: 
+        if len(full_name) < 2: 
             print("Ingrese al menos 1 nombre y 1 apellido")
         else:
-            while vDni == False:
+            while v_dni == False:
                 try:
                     dni = int(input("Ingrese su DNI: "))
-                    vDni = funcion.validDni(dni)
-                    if vDni == False:
+                    v_dni = funcion.validDni(dni)
+                    if v_dni == False:
                         print("Ingrese un DNI válido")
                 except ValueError:
                     print("Ingrese carácteres válidos para la correcta ejecución")
-            lastName = funcion.searchLastName(fullName)
-            dniId = funcion.getDniId(dni)
-            finalId = funcion.createId(fullName, lastName, dniId)
+            last_name = funcion.search_last_name(full_name)
+            dni_id = funcion.get_dni_id(dni)
+            final_id = funcion.create_id(full_name, last_name, dni_id)
 
-            print(f" Nombre: {' '.join(fullName)} \n DNI: {dni} \n ID: {finalId}")
+            print(f" Nombre: {' '.join(full_name)} \n DNI: {dni} \n ID: {final_id}")
     print("Adios.")
 except ValueError:
     print("Ingrese carácteres válidos para la correcta ejecución")

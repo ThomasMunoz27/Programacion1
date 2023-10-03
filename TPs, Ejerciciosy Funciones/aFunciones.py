@@ -55,23 +55,23 @@ def last_word_num(sentence):
 
 #Funcion Eje 3
 #Buscar apellido
-def searchLastName(entryName):
+def search_last_name(entryName):
     if len(entryName) >= 3:
         return  entryName[2]
     elif len(entryName) == 2:
         return entryName[1]
-    
+
 #Obtener los primero 3 números del dni
-def getDniId(dni):
+def get_dni_id(dni):
     if len(str(dni)) == 8:
         return dni // 100000
     else:
         return dni // 10000
 
-def createId(name, lastName, numId):
-    prevId = ""
-    prevId += name[0] + str(len(lastName)) + str(numId)
-    return prevId
+def create_id(name, last_name, num_id):
+    prev_id = ""
+    prev_id += name[0] + str(len(last_name)) + str(num_id)
+    return prev_id
 
 
 #Funcion Eje 4
