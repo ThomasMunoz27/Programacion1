@@ -1,1 +1,3 @@
-print(10 % 3)
+a = "123"
+a = a.split()
+print(a)

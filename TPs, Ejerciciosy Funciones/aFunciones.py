@@ -40,7 +40,7 @@ def timesLetterAppears(aux, letter):
 ##Funciones TP 5
 #Funion Eje 1
 #validar DNI
-def validDni(num):
+def valid_dni(num):
     if len(str(num)) == 7 or len(str(num)) == 8:
         return True
     else:  
@@ -243,4 +243,33 @@ def entering_prime_numbers():
         else:
             print(f'El numero ingresado no es primo, el mayor numero que ingresaste en esta sesion fue "{most_number}"  y su factorial es: {math.factorial(most_number)}\n Saliendo...')
             break
+
+
+##Funciones Ejercicios Variables dimensionadas
+
+#Eje 1
+#Agregar pasajeros
+def add_passengers():
+    while True:
+        person = input("Ingrese su nombre y apellido, DNI y destino: ").title().split(",")
+        if len(person) > 3:
+            print(f"Sobran datos \n")
+        elif len(person) < 3:
+            print("Faltan datos \n ")
+        else:
+            fullname = person[0]
+            dni = int(person[1])
+            destiny = person[2]
+            if valid_dni(dni) == True and len(fullname.split()) == 2:
+                break
+            else:
+                print("Ingrese los datos correctamente. \n")
+    person_tuple = (fullname, dni, destiny)
+    return person_tuple, destiny
+
+    
+    
+
+        
+
 

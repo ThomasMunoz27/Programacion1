@@ -13,7 +13,8 @@ def test_word_large(palabra, resp):
 
 #Funcion tp 5 eje 7
 @pytest.mark.parametrize("lista_numeros, resp, resp2",[
-    ([1, 5, 8, 10, 7, 9, -2], -2, 10)
+    ([1, 5, 8, 10, 7, 9, -2], -2, 10),
+    ([10, 55, 4444, -86, 99], -86, 4444)
 ])
 def test_calc_min_and_max(lista_numeros, resp, resp2):
     assert calc_min_and_max(lista_numeros) == (resp, resp2)
@@ -33,6 +34,8 @@ def test_verify_prime_number(primo, respu):
 #Funcion tp 5 Eje 16
 @pytest.mark.parametrize("num, resp",[
     (12, ["1", "2"]),
+    (159, ["1", "5", "9"])
+
 ])
 def test_separate_num(num, resp):
     assert separate_num(num) == resp
@@ -60,7 +63,8 @@ def test_validDni(num, resp):
 
 #Funcion Tp5 Eje 3
 @pytest.mark.parametrize("name, resp",[
-    (["Ruth", "Condorí"], "Condorí")
+    (["Ruth", "Condorí"], "Condorí"),
+    (["Thomas", "Nicolas", "Muñoz"], "Muñoz")
 ])
 def test_search_last_name(name, resp):
     assert search_last_name(name) == resp
@@ -75,7 +79,19 @@ def test_get_dni_id(dni, resp):
 
 
 @pytest.mark.parametrize("name, last_name, num_id, resp",[
-    (["Paula", "Geier"], "Geier", 445, "Paula5445")
+    (["Paula", "Geier"], "Geier", 445, "Paula5445"),
+    (["Thomas", "Nicolas", "Muñoz"], "Muñoz", 942, "Thomas5942")
 ])
 def test_create_id(name, last_name, num_id, resp):
     assert create_id(name, last_name, num_id) == resp
+
+
+
+#Funcion tp5 Eje 8
+@pytest.mark.parametrize("rad, resp",[
+    (5, 78.5),
+    (3, 28.26)
+
+])
+def test_calc_area(rad, resp):
+    assert calc_area(rad) == resp

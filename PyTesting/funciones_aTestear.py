@@ -71,3 +71,10 @@ def create_id(name, last_name, num_id):
     prev_id = ""
     prev_id += name[0] + str(len(last_name)) + str(num_id)
     return prev_id
+
+
+#Funcion tp5 Eje 8
+import math
+def calc_area(rad):
+    pre_area = 3.14 * (rad**2)
+    return pre_area
