@@ -1,3 +1,19 @@
-a = "123"
-a = a.split()
-print(a)
+    ("Santa Fe", "Argentina"),
+    ("Mendoza", "Argentina"),
+    ("Tucumán", "Argentina"),
+    ("Entre Ríos", "Argentina"),
+    ("Salta", "Argentina"),
+    ("Misiones", "Argentina"),
+    ("Chaco", "Argentina"),
+    ("Corrientes", "Argentina"),
+    ("San Juan", "Argentina"),
+    ("Jujuy", "Argentina"),
+    ("Río Negro", "Argentina"),
+    ("Formosa", "Argentina"),
+    ("Neuquén", "Argentina"),
+    ("San Luis", "Argentina"),
+    ("La Pampa", "Argentina"),
+    ("Catamarca", "Argentina"),
+    ("La Rioja", "Argentina"),
+    ("Santa Cruz", "Argentina"),
+    ("Tierra del Fuego", "Argentina")

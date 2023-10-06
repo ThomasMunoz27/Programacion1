@@ -251,25 +251,75 @@ def entering_prime_numbers():
 #Agregar pasajeros
 def add_passengers():
     while True:
+        #Ingreso de datos
         person = input("Ingrese su nombre y apellido, DNI y destino: ").title().split(",")
+        #Se verifica que no hayan datos faltantes o sobrantes
         if len(person) > 3:
             print(f"Sobran datos \n")
         elif len(person) < 3:
             print("Faltan datos \n ")
         else:
+            #se separan los datos en cada variable
             fullname = person[0]
             dni = int(person[1])
-            destiny = person[2]
+            destiny = person[2].strip()
+            #se comprueba que los datos ingresados estan correctos
             if valid_dni(dni) == True and len(fullname.split()) == 2:
                 break
             else:
                 print("Ingrese los datos correctamente. \n")
+    #se crea la tupla a retornar con los datos ingresados y verificados
     person_tuple = (fullname, dni, destiny)
+    #se retorna la tupla y el destino
     return person_tuple, destiny
 
-    
-    
 
-        
+#Verificar si existe la ciudad en el registro
+def verify_city(city):
+        country = input("Ingrese el pais al que pertenece la ciudad: ").title()
+        return (city, country)
+
+
+
+#agregar ciudades - pais
+def add_city():
+    while True:
+        #Se ingresa una ciudad y un país para registrarlos
+        new_entry = input("Ingrese ciudad y país: ").title().split(",")
+        #verifica que no se ingresen datos de sobra o que falten
+        if len(new_entry) == 2:
+            new_entry[1] = new_entry[1].strip()
+            new_entry = tuple(new_entry)
+            return new_entry
+        else:
+            print("Ingrese una ciudad/pais válida/o")
+
+
+
+#Ver viaje por DNI
+def travel_search(persons):
+    while True:
+        try:
+            #Ingresa el DNI a buscar
+            search_dni = int(input("Ingrese el DNI de la persona para buscar su destino: "))
+            not_found = 0
+            #recorre la lista de pasajeros verificando si el DNI coincide
+            for i in range(0, len(persons)):
+                if persons[i][1] != search_dni:
+                    not_found += 1
+                elif persons[i][1] == search_dni:
+                    found = i
+            #si no coincide muestra un msj
+            if len(persons) == not_found:
+                print("El DNI no está registrado")
+                break
+            #Si coincide devuelve la persona del DNI y su destino
+            else:
+                person_travel = persons[found][0]
+                travel = persons[found][2]
+            print(f"La persona {person_travel}, viaja a {travel}")
+            break
+        except ValueError:
+            print("Ingrese un DNI válido\n")
 
 
