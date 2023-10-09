@@ -360,15 +360,74 @@ def cant_country_tavel(country_list, people):
 
 #Funciones Eje 2
 def fact(people):
+    adress = set()
     person_position = 0
     j = 0
     while True:
-        person = people[j][person_position]
-        j += 1
         if j == len(people):
             break
+        person = people[j][person_position]
+        j += 1
         while j <= len(people):
             
-            print(person)
+            adress.add((person, people[j-1][3]))
             break
+    adress = list(adress)
+    return adress
+
+
+#Funciones Eje 3
+#Pagar cuotas
+def pay_fee(members):
+    while True:
+        try:
+            member_num = int(input(f"\n Ingrese el N° del socio: "))
+            if member_num > len(members):
+                print("Ese N° de socio no existe.\n")
+                break
+            else:
+                if members[member_num][2] == "s":
+                    print("El socio ya estba al día.\n")
+                else:
+                    members[member_num][2] = "s"
+                    print("Ahora el socio está al día.\n")
+                break
+        except ValueError:
+            print("Ingrese un N° de socio válido")
+
+
+#Corregir fechas
+def fix_date(members):
+    dates_to_fix = 0
+    for key in members:
+        if members[key][1] == "13/03/2018":
+            members[key][1] = "14/03/2018"
+            dates_to_fix += 1
+    if dates_to_fix > 0:
+        print("Fechas Corregidas.\n")
+    else:
+        print("No habian fechas a corregir.\n")
+
+
+def delete_member(members):
+    member_name = input("Ingrese el Nombre y Apellido del socio: ").title()
+    succes = 0
+    for key in members:
+        if members[key][0] == member_name:
+            del members[key]
+            print(f"El socio {member_name} se ha dado de baja")
+            succes += 1
+    if succes == 0:
+        print(f"No se encontró al socio {member_name}")
+
+
+def show_members(members):
+    for key in members:
+        name = members[key][0]
+        join_date = members[key][1]
+        if members[key][2] == "s":
+            fee = "Cuota al día"
+        else:
+            fee = "Adeuda cuotas"
+        print(f"Socio N°{key}, {name}, ingresó: {join_date}, {fee}")
 
