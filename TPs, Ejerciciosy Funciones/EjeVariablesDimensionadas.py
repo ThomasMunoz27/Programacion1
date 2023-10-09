@@ -1,9 +1,29 @@
 import aFunciones as funcion
 
-passengers = [("Thomas Muñoz", 94219667, "Buenos Aires")]
-cities = []
+
+#Ejercicio 1
+passengers = [("Thomas Muñoz", 94219667, "Buenos Aires"), ("Denis Rojas", 45682453, "Córdoba")]
 country_cities = [("Buenos Aires", "Argentina"),
     ("Córdoba", "Argentina"),
+    ("Santa Fe", "Argentina"),
+    ("Mendoza", "Argentina"),
+    ("Tucumán", "Argentina"),
+    ("Entre Ríos", "Argentina"),
+    ("Salta", "Argentina"),
+    ("Misiones", "Argentina"),
+    ("Chaco", "Argentina"),
+    ("Corrientes", "Argentina"),
+    ("San Juan", "Argentina"),
+    ("Jujuy", "Argentina"),
+    ("Río Negro", "Argentina"),
+    ("Formosa", "Argentina"),
+    ("Neuquén", "Argentina"),
+    ("San Luis", "Argentina"),
+    ("La Pampa", "Argentina"),
+    ("Catamarca", "Argentina"),
+    ("La Rioja", "Argentina"),
+    ("Santa Cruz", "Argentina"),
+    ("Tierra del Fuego", "Argentina")
 ]
 #Menu
 while True:
@@ -24,7 +44,6 @@ while True:
                 #Sino se debe agregar a que país pertenece
                 if not_here == len(country_cities):
                     country_cities.append(funcion.verify_city(city))
-                print(country_cities)
 
             elif option == 2:
 
@@ -33,15 +52,14 @@ while True:
                 if new_city not in country_cities :
                     country_cities.append(new_city)
                     print("Ciudad agregada")
-                    print(country_cities)
                 else:
                     print(f"La ciudad ya está registrada")
             elif option == 3:
                 funcion.travel_search(passengers)
             elif option == 4:
-                print
+                funcion.cant_passengers_travel(passengers)
             elif option == 5:
-                print
+                funcion.cant_country_tavel(country_cities, passengers)
             elif option == 0:
                 print("Saliendo...")
                 print("Gracias por utilizar nuestros servivios.")
@@ -52,3 +70,8 @@ while True:
         print("Ingrese una de la opciones específicadas")
 
 
+
+#Ejercicio 2
+import aFunciones as funcion
+customers = [("Denis Rojas", 7, 120, "Pinamar 803"), ("Kevin Puentes", 6, 242, "Calle 33"), ("Thomas Muñoz", 5, 1500, "Bernardo Ortiz 1345"), ("Thomas Muñoz", 8, 2500, "Bernardo Ortiz 1345"), ("Thomas Muñoz", 16, 6000, "Bernardo Ortiz 1345"), ("Kevin Puentes", 22, 4623, "Calle 33"), ("Denis Rojas", 25, 10000, "Pinamar 803"),  ]
+funcion.fact(customers)

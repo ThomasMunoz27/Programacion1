@@ -323,3 +323,46 @@ def travel_search(persons):
             print("Ingrese un DNI válido\n")
 
 
+#Ver cuántos pasajeros viajan a X ciudad.
+def cant_passengers_travel(people):
+    #se pide la ciudad a buscar
+    search_city = input("Ingrese la ciudad a buscar: ").title()
+    cant_people = 0
+    #Busca en el registro de los pasajeros si alguno viaja a la ciudad
+    for i in range(0, len(people)):
+        if people[i][2] == search_city:
+            #Si hay coincidencias se agrega 1 añ contador de personas
+            cant_people += 1
+    if cant_people == 0:
+        print("No hay pasajeros que viajan a esa ciudad")
+    else:
+        print(f"{cant_people} pasajeros viajan a esa ciudad")
+
+
+#Ver cuántos pasajeros viajan a X país
+def cant_country_tavel(country_list, people):
+    #se pide el país a buscar
+    search_country = input("Ingrese el país a buscar: ").title()
+    cant_people = 0
+    #iterador para la lista de paises-ciudades
+    for country in range(0, len(country_list)):
+        #iterador para la lista de pasajeros
+        for person in range(0, len(people)):
+            #Si el pais ingresado es igual a el pais iterado Y la ciudad del pais es igual a el destino de el pasajero se suma 1 al contador de personas
+            if country_list[country][0] == people[person][2] and country_list[country][1] == search_country:
+                cant_people += 1
+    if cant_people == 0:
+        print("No hay pasajeros que viajan a ese país \n")
+    else:
+        print(f"{cant_people} pasajeros viajan a ese país\n")
+
+
+
+#Funciones Eje 2
+def fact(people):
+    person = 0
+    i = 0
+    while i < len(people):
+        
+        print(people[i][person])
+        i += 1
