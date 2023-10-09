@@ -360,9 +360,15 @@ def cant_country_tavel(country_list, people):
 
 #Funciones Eje 2
 def fact(people):
-    person = 0
-    i = 0
-    while i < len(people):
-        
-        print(people[i][person])
-        i += 1
+    person_position = 0
+    j = 0
+    while True:
+        person = people[j][person_position]
+        j += 1
+        if j == len(people):
+            break
+        while j <= len(people):
+            
+            print(person)
+            break
+
