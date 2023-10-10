@@ -431,3 +431,6 @@ def show_members(members):
             fee = "Adeuda cuotas"
         print(f"Socio N°{key}, {name}, ingresó: {join_date}, {fee}")
 
+
+###  Tp N°6   ### 
+#Funcion Eje 7
