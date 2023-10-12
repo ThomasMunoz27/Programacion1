@@ -1,70 +1,46 @@
 import aFunciones as funcion
+print("Bienvenid@ al Juego de memoria. ")
+cards = funcion.posicionate_characters()
+enigm_cards = [["?", "?", "?", "?", "?", "?"], 
+                ["?", "?", "?", "?", "?", "?"],
+                ["?", "?", "?", "?", "?", "?"]
+                ]
 
+to_adivinate = [[1,2,3,4,5,6],
+                [7,8,9,10,11,12],
+                [13,14,15,16,17,18]
+                ]
 
-#Ejercicio 1
-passengers = [("Thomas Muñoz", 94219667, "Buenos Aires"), ("Denis Rojas", 45682453, "Córdoba")]
-country_cities = [("Buenos Aires", "Argentina"),
-    ("Córdoba", "Argentina"),
-    ("Santa Fe", "Argentina"),
-    ("Mendoza", "Argentina"),
-    ("Tucumán", "Argentina"),
-    ("Entre Ríos", "Argentina"),
-    ("Salta", "Argentina"),
-    ("Misiones", "Argentina"),
-    ("Chaco", "Argentina"),
-    ("Corrientes", "Argentina"),
-    ("San Juan", "Argentina"),
-    ("Jujuy", "Argentina"),
-    ("Río Negro", "Argentina"),
-    ("Formosa", "Argentina"),
-    ("Neuquén", "Argentina"),
-    ("San Luis", "Argentina"),
-    ("La Pampa", "Argentina"),
-    ("Catamarca", "Argentina"),
-    ("La Rioja", "Argentina"),
-    ("Santa Cruz", "Argentina"),
-    ("Tierra del Fuego", "Argentina")
-]
-#Menu
-while True:
-    try:
-            #opciones de menú
-            option = int(input("Ingrese una opcion de menú \n (1) Para agregar pajajeros. \n (2) Agregar ciudades. \n (3) Ver viaje por N°DNI. \n (4) Ver cuántos pasajeros viajan a X ciudad. \n (5) Ver cuántos pasajeros viajan a X país \n (0) Salir \n :"))
+list_of_correct_nums = []
 
-            if option == 1:
-                passenger, city = funcion.add_passengers()
-                #se agrega el pasajero a la lista de pasajeros
-                passengers.append(passenger)
-
-                not_here = 0
-                #se busca si la ciudad de destino está en la lista de ciudades.
-                for i in country_cities:
-                    if city not in i:
-                        not_here += 1
-                #Sino se debe agregar a que país pertenece
-                if not_here == len(country_cities):
-                    country_cities.append(funcion.verify_city(city))
-
-            elif option == 2:
-
-                new_city = funcion.add_city()
-                #verifica que la ciudad-pais no esté registrada para registrarla
-                if new_city not in country_cities :
-                    country_cities.append(new_city)
-                    print("Ciudad agregada")
+while "?" in [item for row in enigm_cards for item in row]:
+    print()
+    funcion.prin_cards(to_adivinate)
+    while True:
+        try:
+            coincidence = False
+            while True:
+                user_try = int(input("Ingrese un número para ver la figura: "))
+                if user_try in list_of_correct_nums:
+                    print("Ya se adivinó ese número")
                 else:
-                    print(f"La ciudad ya está registrada")
-            elif option == 3:
-                funcion.travel_search(passengers)
-            elif option == 4:
-                funcion.cant_passengers_travel(passengers)
-            elif option == 5:
-                funcion.cant_country_tavel(country_cities, passengers)
-            elif option == 0:
-                print("Saliendo...")
-                print("Gracias por utilizar nuestros servivios.")
-                break
-            else:
-                print("Ingrese una de la opciones específicadas")
-    except ValueError:
-        print("Ingrese una de la opciones específicadas")
+                    break
+            funcion.prin_cards(funcion.find_card1(user_try, enigm_cards, cards))
+            print()
+            while True:
+                user_compare = int(input("Ingrese un número para comparar la figura: "))
+                if user_compare in list_of_correct_nums:
+                    print("Ya se adivinó ese número")
+                else:
+                    break
+            funcion.prin_cards(funcion.find_card1(user_compare, enigm_cards, cards))
+            print()
+            enigm_cards, to_adivinate, coincidence = funcion.compare_cards(user_try, user_compare, enigm_cards, cards, to_adivinate, coincidence)
+            if coincidence == True:
+                list_of_correct_nums.append(user_try)
+                list_of_correct_nums.append(user_compare)
+            break
+        except ValueError:
+            print("Ingrese un número del 1 al 18")
+        
+print("Felicidades has adivinado todos los símbolos!")
