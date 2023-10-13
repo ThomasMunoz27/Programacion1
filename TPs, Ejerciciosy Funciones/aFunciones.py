@@ -433,7 +433,7 @@ def show_members(members):
 
 
 ###  Tp N°6   ### 
-#Funcion Eje 7
+#Funcion Eje 7 TP6
 def count_characters(phrase_list):
     dic_letters = {}
     for sentence1 in phrase_list:
@@ -447,7 +447,7 @@ def count_characters(phrase_list):
     for clave, value in dic_letters.items():
         print(f"El carácter {clave} aparece: {value} veces.")
 
-#Funcion Eje 9
+#Funcion Eje 9 TP6
 #Imprime las filas y columnas de una forma mas bonita visualmente
 def prin_cards(cards):
     for i in range(len(cards)):
@@ -490,6 +490,7 @@ def find_card1(position, enigm, card):
     return enigm
 
 
+#compara las posiciones ingresadas por el usuario y si son iguales muestra un mensaje y las parejas de cartas adivinadas se mostrarán el resto del juego.
 def compare_cards(u_try, u_compare, enimg, card, to_convert, correct):
     row1 = (u_try -1) // 6
     column1 = (u_try - 1) % 6
@@ -508,3 +509,26 @@ def compare_cards(u_try, u_compare, enimg, card, to_convert, correct):
         enimg[row2][column2] = "?"
         correct = False
     return (enimg, to_convert, correct)
+
+
+
+#Funciones eje 10 TP6
+#Pone en una lista la diagonal de una matriz
+def calc_diagonal(matriz):
+    matriz_rows = len(matriz)
+    diag = []
+    i = 0
+    while i < matriz_rows:
+        diag.append(matriz[i][i])
+        i += 1
+    return diag
+
+#Pone en una lista la diagonal inversa de una matriz
+def calc_inv_diagonal(matriz):
+    inv_position = len(matriz) - 1
+    i = 0
+    inv_diag = []
+    while inv_position > i-1:
+        inv_diag.append(matriz[inv_position][inv_position])
+        inv_position -= 1
+    return inv_diag

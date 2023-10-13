@@ -47,6 +47,7 @@ while "?" in [item for row in enigm_cards for item in row]:
 
             #compara los simbolos de las posiciones, si son iguales se guardan
             enigm_cards, to_adivinate, coincidence = funcion.compare_cards(user_try, user_compare, enigm_cards, cards, to_adivinate, coincidence)
+            #No permite ingresar un número ya adivinado correctamente
             if coincidence == True:
                 list_of_correct_nums.append(user_try)
                 list_of_correct_nums.append(user_compare)
@@ -55,3 +56,24 @@ while "?" in [item for row in enigm_cards for item in row]:
             print("Ingrese un número del 1 al 18")
         
 print("Felicidades has adivinado todos los símbolos!")
+
+
+#Ejercicio 10
+import aFunciones as funcion
+first_matrix = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+]
+diagonal = funcion.calc_diagonal(first_matrix)
+print(diagonal)
+
+inv_diagonal = funcion.calc_inv_diagonal(first_matrix)
+print(inv_diagonal)
+
+
+#Ejercicio 11
+coin_dictionary = {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
+currency = input("Ingrese el nombre de una divisa: ")
+if currency in coin_dictionary:
+    print()
