@@ -532,3 +532,35 @@ def calc_inv_diagonal(matriz):
         inv_diag.append(matriz[inv_position][inv_position])
         inv_position -= 1
     return inv_diag
+
+
+### Funciones Ejercicio Reursion ###
+#funciones Eje 1
+import random as ran
+def chose_way():
+    prob = ran.randint(1,3)
+    return prob
+
+
+def lab_rat(time_rat):
+    way = chose_way()
+    if way == 3:
+        time_rat += 7
+        print("La rata escogió el camino 3")
+        return time_rat
+    elif way == 1:
+        time_rat +=3
+        print("La rata escogió el camino 1")
+        return lab_rat(time_rat)
+    elif way == 2: 
+        time_rat += 5
+        print("La rata escogió el camino 2")
+        return lab_rat(time_rat)
+
+
+#Funcion Eje 2
+def f(n):
+    s=str(n)
+    if len(s) <=1:
+        return s
+    return s[-1] + f(int(s[:-1]))
