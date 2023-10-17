@@ -1,11 +1,19 @@
-import aFunciones as funcion
-first_matrix = [
-    [1,2,3],
-    [4,5,6],
-    [7,8,9]
-]
-diagonal = funcion.calc_diagonal(first_matrix)
-print(diagonal)
+#Ejercicio 1 y 2
+num_list = []
+while True:
+    try:
+        entry_num = int(input("Ingrese números para ingresarlos en una lista: "))
+        if entry_num == 0:
+            break
+        else:
+            num_list.append(entry_num)
 
-inv_diagonal = funcion.calc_inv_diagonal(first_matrix)
-print(inv_diagonal)
+
+    except ValueError:
+        print("Ingrese un número")
+second_entry = int(input("Ingrese otro número"))
+if second_entry in num_list:
+    num_list.remove(second_entry)
+    print(num_list)
+else: 
+    print("No es posible eliminar ese número de la lista")

@@ -192,7 +192,7 @@ print(f"Usted ha calculado los factoriales de {cant_entries} números")
 #Ejercicio 16
 import aFunciones as funcion
 try:
-    frecuency = 0
+    
     num = int(input("Ingrese un número entero: "))
     #separar el número
     num = funcion.separate_num(num)
@@ -202,7 +202,7 @@ try:
             print("Ingrese solamente un dígito")
         else:
             break
-    frecuency = funcion.determ_frec(digit, frecuency, num)
+    frecuency = funcion.determ_frec(digit, num)
     print(f"El número {digit} aparece {frecuency} veces en el número {('').join(num)}")
 except ValueError:
     print("Ingrese solamente números")
