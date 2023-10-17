@@ -200,7 +200,8 @@ def separate_num(num):
     aux = list(str(num))
     return aux
 
-def determ_frec(dig, frec, separate_num):
+def determ_frec(dig, separate_num):
+    frec = 0
     for i in separate_num:
         if dig == i:
             frec +=1
@@ -433,6 +434,20 @@ def show_members(members):
 
 
 ###  Tp N°6   ### 
+
+#Funciones Eje 6 TP6
+def capture_names(prompt):
+    names = []
+    while True:
+        name = input(prompt).title
+        if name == "X":
+            break
+        elif len(name.split()) > 1:
+            print("Ingrese solamente el nombre de pila")
+        else:
+            names.append(name)
+    return names
+
 #Funcion Eje 7 TP6
 def count_characters(phrase_list):
     dic_letters = {}
