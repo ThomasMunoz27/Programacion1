@@ -564,3 +564,13 @@ def f(n):
     if len(s) <=1:
         return s
     return s[-1] + f(int(s[:-1]))
+
+
+### Funciones TP N°8 ###
+def count_digits(n):
+    s = str(n)
+    if len(s) <= 1:
+        return 1
+    else:
+        
+    
