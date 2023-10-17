@@ -1,3 +1,25 @@
+#Ejercicio 1 y 2
+num_list = []
+while True:
+    try:
+        entry_num = int(input("Ingrese números para ingresarlos en una lista: "))
+        if entry_num == 0:
+            break
+        else:
+            num_list.append(entry_num)
+
+
+    except ValueError:
+        print("Ingrese un número")
+second_entry = int(input("Ingrese otro número"))
+if second_entry in num_list:
+    num_list.remove(second_entry)
+    print(num_list)
+else: 
+    print("No es posible eliminar ese número de la lista")
+
+
+
 #Ejercicio 7
 import aFunciones as funcion
 phrase_list = []
@@ -74,6 +96,8 @@ print(inv_diagonal)
 
 #Ejercicio 11
 coin_dictionary = {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
-currency = input("Ingrese el nombre de una divisa: ")
+currency = input("Ingrese el nombre de una divisa: ").title()
 if currency in coin_dictionary:
-    print()
+    print(coin_dictionary[currency])
+else:
+    print("La divisa no está registrada")
