@@ -628,10 +628,69 @@ def f(n):
 
 
 ### Funciones TP N°8 ###
-def count_digits(n):
+def count_digits(n, digits):
     s = str(n)
     if len(s) <= 1:
-        return 1
+        return digits
     else:
-        print()    
+        digits += 1
+        return count_digits(s[:-1], digits)
+
+
+#Funcion Eje 3
+def string_position(a, b, start = 0):
+    count = []
+    print(start)
+    index = a.find(b, start)
+    print(index)
+    if index != -1:
+        count.append(index)
+        count += string_position(a, b, index + 1)
+    return count
+
+
+
+#Funcion Eje 5
+def found_bigest(nums, mayor = None, i = 0):
+    if i == len(nums):
+        return mayor
+    else:
+        if mayor is None or nums[i] > mayor:
+            mayor = nums[i]
+    return found_bigest(nums, mayor, i+1 )
+
+
+#Funcion Eje 6
+def repli(nums, n, index = 0):
+    if index == (len(nums)):
+        return []
+
+    num_list = []
+    for i in range(n):
+        num_list.append(nums[index])
+        
+    return num_list + repli(nums, n, index + 1 )
+
+
+#Funcion Eje 7
+def period_sum(n,p):
+    if n == 1:
+        return n
+    else:
+        k = n * p + period_sum(n-1,p)
+        return k
+
+
+
+#Funcion Eje 8
+def pascal(n,k):
+    print(f"{n} --- {k}")
+    if n == 0 or k == 0 or n == k:
+        print("a")
+        return 1 
+    else:
+        print("b")
+        
+        return pascal(n-1,k-1) + pascal(n-1,k)
+    
     
