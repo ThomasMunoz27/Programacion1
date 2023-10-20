@@ -549,51 +549,6 @@ def calc_inv_diagonal(matriz):
     return inv_diag
 
 
-### Funciones de Ordenamiento y Busqueda ###
-
-#Burbuja
-def bubble_sort(to_order):
-    large = len(to_order)
-    for i in range(0,large):
-        for j in range(0,large):
-            if to_order[j] > to_order[i]:
-                to_order[i], to_order[j] = to_order[j], to_order[i]
-    return to_order
-
-
-#seleccion
-def selection_sort(to_order):
-    large = len(to_order)
-    for i in range(0, large):
-        menor = to_order[i]
-        pos = i
-        for j in range(i, large):
-            if to_order[i] < menor:
-                menor = to_order[i]
-                pos = j
-        if pos != i:
-                    to_order[i], to_order[pos] = to_order[pos], to_order[i]
-    return to_order
-
-
-#Insercion
-def insert_sort(to_order):
-    large = len(to_order)
-    for i in range(0, large):
-        menor = to_order[i]
-        pos = i
-        for j in range(pos, large):
-            if to_order[j] < menor:
-                to_order[i], to_order[j] = to_order[j], to_order[i]
-    return to_order
-
-
-#Merge
-def merge_sort(to_order):
-    large = len(to_order)
-    
-
-
 
 ### Funciones Ejercicio Reursion ###
 #funciones Eje 1
@@ -625,6 +580,18 @@ def f(n):
     if len(s) <=1:
         return s
     return s[-1] + f(int(s[:-1]))
+
+
+### Funciones Tp 7 ###
+#Funcion Eje 3
+def order_books(to_order, book):
+    large = len(to_order)
+    for i in range(0,large):
+        for j in range(0,large):
+            if to_order[j] > to_order[i]:
+                book[i], book[j] = book[j] , book[i]
+    return book
+
 
 
 ### Funciones TP N°8 ###

@@ -1,14 +1,14 @@
-import aFunciones as funcion
+import aOrdenamientos as orden
 nums = [5,7,6,44,2,3,8,9,4444,6,1,10,96,69]
-large = len(nums)
-print(nums[0:large//2])
-print(nums[large//2::])
 
 print("Burbuja")
-print(funcion.bubble_sort(nums))
+print(orden.bubble_sort(nums))
 
 print("Seleccion")
-print(funcion.selection_sort(nums))
+print(orden.selection_sort(nums))
 
 print("Insercion")
-print(funcion.selection_sort(nums))
+print(orden.insert_sort(nums))
+
+print("Merge")
+print(orden.merge_sort(nums))
