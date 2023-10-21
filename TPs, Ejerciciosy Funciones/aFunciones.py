@@ -593,6 +593,29 @@ def order_books(to_order, book):
     return book
 
 
+#Funcion Eje 4
+def insertion_sort_large(to_order):
+    for i in range(1, len(to_order)):
+        key = to_order[i]  
+        j = i - 1  
+
+        while j >= 0 and len(key) < len(to_order[j]):
+            to_order[j + 1] = to_order[j]
+            j -= 1
+
+        to_order[j + 1] = key
+    return to_order
+
+
+#Funcion Eje 5
+def bubble_sort_inv(to_order):
+    large = len(to_order)
+    for i in range(0,large):
+        for j in range(0,large):
+            if to_order[j] < to_order[i]:
+                to_order[i], to_order[j] = to_order[j], to_order[i]
+    return to_order
+
 
 ### Funciones TP N°8 ###
 def count_digits(n, digits):
