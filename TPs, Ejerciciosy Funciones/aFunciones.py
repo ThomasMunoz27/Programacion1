@@ -651,6 +651,18 @@ def string_position(a, b, start = 0):
     return count
 
 
+#Funcion Eje 4
+def par(num):
+    if num == 1:
+        return False
+    else:
+        return impar(num)
+
+def impar(num):
+    if num == 1:
+        return True
+    else:
+        return par(num - 1)
 
 #Funcion Eje 5
 def found_bigest(nums, mayor = None, i = 0):
@@ -695,4 +707,41 @@ def pascal(n,k):
         
         return pascal(n-1,k-1) + pascal(n-1,k)
     
-    
+
+#Funcion Eje 9
+def combinations_helper(characters, k, current_combination, result):
+    if len(current_combination) == k:
+        result.append(current_combination)
+        return
+
+    if len(current_combination) > k:
+        return  # Salir si la combinación actual supera la longitud máxima
+
+    for char in characters:
+        # Evita caracteres repetidos en la combinación
+        if char not in current_combination:
+            new_combination = current_combination + char
+            combinations_helper(characters, k, new_combination, result)
+
+
+def combinations(characters, k):
+    if len(set(characters)) < len(characters):
+        return 'La lista no puede contener caracteres repetidos'
+
+    result = []
+    combinations_helper(characters, k, "", result)
+    return result
+
+
+#Funcion Eje 10
+def calc_size(n, base = [841, 1189]):
+    if n == 0:
+        if base[0] > base[1]:
+            base[0], base[1] = base[1], base[0]
+        return tuple(base)
+    else:
+        if n % 2 == 0:
+            base[0] = base[0]//2
+        else:
+            base[1] = base[1]//2
+        return calc_size(n - 1, base)

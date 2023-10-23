@@ -17,6 +17,12 @@ print(funcion.string_position("pablito clavó un clavito, cuantos clavitos clav�
 
 
 
+#Ejercicio 4
+import aFunciones as funcion
+num = int(input("Ingrse un número para saber si es par o impar: "))
+
+
+
 #Ejercicio 5
 import aFunciones as funcion
 nums = [5,2,4444,7,19,4449,100,15,64,69]
@@ -49,3 +55,16 @@ k = int(input("Ingrese la columna: "))
 
 num = funcion.pascal(n,k)
 print(num)
+
+
+#Ejercicio 9
+import aFunciones as funcion
+print(funcion.combinations(['a', 'b', 'c'], 3))
+
+
+#Ejercicio 10
+import aFunciones as funcion
+size = int(input("Ingrese la medida de la hoja A(N): "))
+print(f"El tamaño de la hoja A{size} es :")
+final_size = funcion.calc_size(size)
+print(f"{final_size[0]}mm x {final_size[1]}mm")
