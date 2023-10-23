@@ -656,7 +656,7 @@ def par(num):
     if num == 1:
         return False
     else:
-        return impar(num)
+        return impar(num-1)
 
 def impar(num):
     if num == 1:

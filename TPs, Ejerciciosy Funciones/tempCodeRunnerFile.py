@@ -1,5 +1,6 @@
 import aFunciones as funcion
-size = int(input("Ingrese la medida de la hoja A(N): "))
-print(f"El tamaño de la hoja A{size} es :")
-final_size = funcion.calc_size(size)
-print(f"{final_size[0]}mm x {final_size[1]}mm")
+num = int(input("Ingrse un número para saber si es par o impar: "))
+val_par = funcion.par(num)
+val_imp = funcion.impar(num)
+print(f"¿El número {num} es par?:{val_par}")
+print(f"¿El número {num} es impar?: {val_imp}")

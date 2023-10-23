@@ -20,7 +20,10 @@ print(funcion.string_position("pablito clavó un clavito, cuantos clavitos clav�
 #Ejercicio 4
 import aFunciones as funcion
 num = int(input("Ingrse un número para saber si es par o impar: "))
-
+val_par = funcion.par(num)
+val_imp = funcion.impar(num)
+print(f"¿El número {num} es par?: {val_par}")
+print(f"¿El número {num} es impar?: {val_imp}")
 
 
 #Ejercicio 5
