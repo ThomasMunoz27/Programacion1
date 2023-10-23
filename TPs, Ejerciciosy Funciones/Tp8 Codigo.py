@@ -5,6 +5,12 @@ num = int(input("Ingrese un número: "))
 print(funcion.count_digits(num, digit))
 
 
+#Ejercicio 2
+import aFunciones as funcion
+num1, num2 = 36, 6
+print(funcion.find_pot(num1, num2))
+
+
 #Ejercicio 3
 import aFunciones as funcion
 print(funcion.string_position("pablito clavó un clavito, cuantos clavitos clavó pablito", "ito"))

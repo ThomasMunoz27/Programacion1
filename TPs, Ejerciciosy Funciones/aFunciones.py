@@ -618,6 +618,7 @@ def bubble_sort_inv(to_order):
 
 
 ### Funciones TP N°8 ###
+#Funcion Eje 1
 def count_digits(n, digits):
     s = str(n)
     if len(s) <= 1:
@@ -625,6 +626,17 @@ def count_digits(n, digits):
     else:
         digits += 1
         return count_digits(s[:-1], digits)
+
+
+#Funcion Eje 2
+def find_pot(n, b):
+    
+    if (n == b):
+        return True
+    elif (n < 0):
+        return False        
+    else:
+        return find_pot(n - b, b)
 
 
 #Funcion Eje 3
