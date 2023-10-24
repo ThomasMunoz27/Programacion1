@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./TPs, Ejerciciosy Funciones/aClases",
+        "./TPs_Ejerciciosy_Funciones/aClases"
+    ]
+}
