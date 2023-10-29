@@ -1,8 +1,10 @@
 import sys
 sys.path.append("C:/Users/sonic/OneDrive/Escritorio/GitHub/Programacion1/TPs_Ejerciciosy_Funciones/aClases")
+from Persona import Person
+from Cuenta import Count
+from Triangulo import Triangle
 
 #Ejercicio 1
-from Persona import Person
 '''
 p1 = Person("Thomas", 17, 94219667)
 p2 = Person()
@@ -18,3 +20,21 @@ p1.adult()
 p2.adult()
 '''
 #Ejercicio 2
+'''
+c1 = Count("Thomas Muñoz", 38522.59)
+
+c1.show_info()
+c1.set_amount(2000.0)
+c1.show_info()
+c1.set_amount(-5000.0)
+c1.show_info()
+c1.entry_money(5)
+c1.entry_money(-5)
+c1.withdraw(6)
+c1.withdraw(-6)
+'''
+
+#Ejercicio 3
+t1 = Triangle("a", 10, 5, 6)
+
+print(t1.set_tria_type("equilátero"))
