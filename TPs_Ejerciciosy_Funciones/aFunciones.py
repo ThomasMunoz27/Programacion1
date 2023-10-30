@@ -745,3 +745,23 @@ def calc_size(n, base = [841, 1189]):
         else:
             base[1] = base[1]//2
         return calc_size(n - 1, base)
+    
+
+### Funciones TP 9 ###
+def valid_int(promp):
+    while True:
+        try:
+            entry = int(input(f"{promp}"))
+            return entry
+        except ValueError:
+            print("Ingrese un número") 
+
+def new_contact():
+    name = input("Ingrese el nombre del contacto: ").title()
+    num = valid_int("Ingrese el número de telefono: ")
+    while True:
+        email = input("Ingrese el email: ")
+        if "@" in email and "." in email:
+            return([name, num, email])
+        else:
+            print("Ingrese una direccion de email válida")

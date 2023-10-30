@@ -1,53 +1,55 @@
 class Triangle:
 
-    def __init__(self, tria_type = "", side1=0.0, side2=0.0, side3=0.0):
+    def __init__(self, tria_type = "", side1 = 0.0, side2 = 0.0, side3 = 0.0):
         self.tria_type = tria_type
         self.side1 = side1
         self.side2 = side2
         self.side3 = side3
 
-    #Definicion de getters
+    # Definición de getters
     @property
-    def get_tria_type(self):
-        return self.tria_type
+    def tria_type(self):
+        return self._tria_type
+
+    @property
+    def side_1(self):
+        return self._side1
+
+    @property
+    def side_2(self):
+        return self._side2
+
+    @property
+    def side_3(self):
+        return self._side3
     
-    @property
-    def get_side1(self):
-        return self.side1
-    @property
-    def get_side2(self):
-        return self.side2
-    @property
-    def get_side3(self):
-        return self.side3
-    
-    #Definiendo setters
-    def set_tria_type(self, new_type):
+    # Definición de setters
+    @tria_type.setter
+    def tria_type(self, new_type):
         new_type = new_type.lower()
-        if new_type != "equilátero" or new_type != "isósceles" or new_type != "escaleno":
-            self.tria_type = new_type
+        if new_type in ["equilátero", "isósceles", "escaleno"]:
+            self._tria_type = new_type
+        else:
+            print("No es un tipo de triángulo válido")
 
-    @side1.setter
-    def side1(self, new_side):
-        self.side1 = new_side
-    
-    @side2.setter
-    def side2(self, new_side):
-        self.side2 = new_side
+    @side_1.setter
+    def set_side1(self, new_side):
+        self._side1 = new_side
 
-    @side3.setter
-    def side3(self, new_side):
-        self.side3 = new_side
+    @side_2.setter
+    def set_side2(self, new_side):
+        self._side2 = new_side
 
-    ### Metodos ###
-    #Mostrar el tipo de triángulo
+    @side_3.setter
+    def set_side3(self, new_side):
+        self._side3 = new_side
 
+    # Métodos
+    # Mostrar datos del triángulo
+    def show_info(self):
+        print(f"Los lados del triángulo {self.tria_type} son {self.side1}, {self.side2}, {self.side3}")
 
-    #Mostrar el lado mas largo
+    # Mostrar el lado más largo
     def show_larger_side(self):
-        larger = self.side1
-        if self.side2 > larger:
-            larger = self.side2
-        if self.side3 > larger:
-            larger = self.side3
-        print(f"El lado mas largo del triangulo {self.tria_type} es de: {larger}")
+        larger = max(self.side1, self.side2, self.side3)
+        print(f"El lado más largo del triángulo {self.tria_type} es de: {larger}")

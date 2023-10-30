@@ -18,7 +18,7 @@ class Count:
 
 
 #Definiendo setters
-    @property
+    
     def set_owner(self, new_owner):
         self.owner = new_owner
 
