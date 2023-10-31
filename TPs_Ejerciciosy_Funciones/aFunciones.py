@@ -765,3 +765,30 @@ def new_contact():
             return([name, num, email])
         else:
             print("Ingrese una direccion de email válida")
+
+
+### Funciones Repaso Parcial ###
+def num_check(num_list, i, j):
+    while True:
+        num = valid_int(f"Ingrese un número para la posicion {i}:{j} : ")
+        if num < 1 or num > 75:
+            print("El número ingresado debe ser entr el 1 y el 75.\nPor Favor ingrese otro número.")
+        elif num in num_list:
+            print("Ya se ingresó este número.\nPor favor ingrese otro número.")
+        else:
+            return num
+
+
+def fill_board(num, board):
+    for i in range(0, 5):
+        for j in range(0,5):
+            if num == board[i][j]:
+                board[i][j] = "√"
+                print(f"Se encotró el número {num} en tu tablero de Bingo")
+                return 1, board
+    print(f"No se encontró el número {num} en tu tablero de Bingo")
+    return 0, board
+            
+
+def check_bingo(board):
+    print()
