@@ -778,17 +778,35 @@ def num_check(num_list, i, j):
         else:
             return num
 
-
 def fill_board(num, board):
     for i in range(0, 5):
         for j in range(0,5):
             if num == board[i][j]:
                 board[i][j] = "√"
                 print(f"Se encotró el número {num} en tu tablero de Bingo")
-                return 1, board
+                return board
     print(f"No se encontró el número {num} en tu tablero de Bingo")
-    return 0, board
+    return board
             
 
 def check_bingo(board):
-    print()
+    for i in range(0, 5):
+        if board[i][0] == "√" and board[i][1] == "√" and board[i][2] == "√" and board[i][3] == "√" and board[i][4] == "√":
+            print("BINGO!!!")
+            return True
+        elif board[0][i] == "√" and board[1][i] == "√" and board[2][i] == "√" and board[3][i] == "√" and board[4][i] == "√":
+            print("BINGO!!!")
+            return True
+        elif board[0][0] == "√" and board[1][1] == "√" and board[2][2] == "√" and board[3][3] == "√" and board[4][4] == "√":
+            print("BINGO!!!")
+            return True
+        elif board[0][4] == "√" and board[1][3] == "√" and board[2][2] == "√" and board[3][1] == "√" and board[4][0] == "√":
+            print("BINGO!!!")
+            return True
+    return False
+        
+
+def prin_array(cards):
+    for i in range(len(cards)):
+        print(f"{cards[i][0]} - {cards[i][1]} - {cards[i][2]} - {cards[i][3]} - {cards[i][4]}")
+    return ""
