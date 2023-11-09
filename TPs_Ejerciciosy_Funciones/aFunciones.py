@@ -810,3 +810,30 @@ def prin_array(cards):
     for i in range(len(cards)):
         print(f"{cards[i][0]} - {cards[i][1]} - {cards[i][2]} - {cards[i][3]} - {cards[i][4]}")
     return ""
+
+### Funciones Parcial 2 ###
+#verifica que el input coincida con los requerimientos
+def check_letter(msg):
+    #booleano de auxiliar
+    go = False
+    #Mientras ingrese incorrectamente pedirá el input
+    while True:
+        letter = input(msg).upper()
+        #Si la longitud no es 6 vuelve a pedir el input
+        if len(letter) != 6:
+                print("Debe ingresar 6 letras")
+        else:
+            for i in letter:
+                if i != "A" and i != "C" and i != "T" and i != "G":
+                    print("Ingreso de valores inválido")
+                    go = False
+                    break
+                else:
+                    go = True
+        if go:
+            return letter
+
+
+#Funcion para verificar si hay 4 carácteres iguales alineados
+#def is_mutant(adn):
+    
