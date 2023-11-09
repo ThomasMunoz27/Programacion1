@@ -811,7 +811,7 @@ def prin_array(cards):
         print(f"{cards[i][0]} - {cards[i][1]} - {cards[i][2]} - {cards[i][3]} - {cards[i][4]}")
     return ""
 
-### Funciones Parcial 2 ###
+    ### Funciones Parcial 2 ###
 #verifica que el input coincida con los requerimientos
 def check_letter(msg):
     #booleano de auxiliar
@@ -823,17 +823,133 @@ def check_letter(msg):
         if len(letter) != 6:
                 print("Debe ingresar 6 letras")
         else:
+            #Si alguna de las letras ingresadas es incorrecta vuelve a pedir el input
             for i in letter:
-                if i != "A" and i != "C" and i != "T" and i != "G":
+                if i not in ["A", "C", "T", "G"]:
                     print("Ingreso de valores inválido")
                     go = False
                     break
                 else:
                     go = True
         if go:
+            #devuelve el input
             return letter
 
 
+#valores de 4 carácteres en una lista de 6 filas
+def colu_sum(adn, i):
+#lista de ADN pero con 4 filas
+    colums_adn = adn[0+i:4+i]
+#Lista que contendrá 4 valores de las 6 columnas de ADN
+    sum_colu = [""] * 6
+    for j in range(len(adn)):
+        for row in colums_adn:
+#Toma 1 elemento de cada columna, los junta y lo agrega a una lista
+                sum_colu[j] +=row[j]
+#devuelve las columnas hechas filas de 4 carácteres de longitud
+    return sum_colu
+
+
+def daig_sum(adn, i):
+#ADN de 4 filas
+    aux_rows_adn = adn[0+i:4+i]
+#Variable de diagonales
+    sum_diags = [""] * 3
+
+#Itera hasta la 3ra columna (máxima de diagonales de 4 carácteres)
+    for j in range(0,3):
+        aux = 0
+        for row in aux_rows_adn:
+                
+                sum_diags[j] += row[j+aux]
+                aux +=1
+
+    #devuelve las diagonales hechas filas de 4 carácteres de longitúd
+    return sum_diags
+
+
+def inv_diag_sum(adn, i):
+#ADN de 4 filas
+    aux_rows_adn = adn[0+i:4+i]
+#Variable de diagonales
+    sum_inv_diags = [""] * 3
+
+    for j in range(2, -1, -1):
+        aux = 3
+        for row in aux_rows_adn:
+            sum_inv_diags[j] += row[j+aux]
+            aux -=1
+
+    #devuelve las diagonales invertidas hechas filas de 4 carácteres de longitúd
+    return sum_inv_diags
+
 #Funcion para verificar si hay 4 carácteres iguales alineados
-#def is_mutant(adn):
-    
+def is_mutant(dna):
+#cantidad de 4 cáracteres iguales seguidos
+    coincidence = 0
+
+
+#Variables auxiliares
+    a, c, t, g = "AAAA" ,"CCCC" ,"TTTT" ,"GGGG"
+
+
+    #Iteracion
+    for i in range(0,6):
+        # Bloque comprobacion filas #
+
+        #Busca en las filas si los primeros 4 carácteres son iguales
+        if dna[i][:4] in [a,c,t,g]:
+            coincidence += 1
+
+
+        #Busca en las filas si los 4 carácteres del medio son iguales
+        elif dna[i][1:5] in [a,c,t,g]:
+            coincidence += 1
+
+
+        #Busca en las filas si los últimos 4 carácteres son iguales
+        elif dna[i][2:] in [a,c,t,g]:
+            coincidence += 1
+
+
+    # Bloque comprobacion columnas #
+
+#variables auxilires para columnas
+    sum1_columns = colu_sum(dna, 0)
+    sum2_columns = colu_sum(dna, 1)
+    sum3_columns = colu_sum(dna, 2)
+    total_column = sum1_columns + sum2_columns + sum3_columns
+    for k in range(len(total_column)):
+        if total_column[k] in [a,c,t,g]:
+            coincidence += 1
+
+
+
+    # Bloque comprobacion diagonales #
+
+#variables para diagonales
+    sum1_diag = daig_sum(dna, 0)
+    sum2_diag = daig_sum(dna, 1)
+    sum3_diag = daig_sum(dna, 2)
+    total_diags = sum1_diag + sum2_diag + sum3_diag
+    for k in range(len(total_diags)):
+        if total_diags[k] in [a,c,t,g]:
+            coincidence += 1
+
+
+    # Bloque comprobacion diagnoales invertidas #
+
+#variables para diagonales invertidas
+    sum1_inv_diag = inv_diag_sum(dna, 0)
+    sum2_inv_diag = inv_diag_sum(dna, 1)
+    sum3_inv_diag = inv_diag_sum(dna, 2)
+    total_inv_diag = sum1_inv_diag + sum2_inv_diag + sum3_inv_diag
+    for k in range(len(total_inv_diag)):
+        if total_inv_diag[k] in [a,c,t,g]:
+            coincidence += 1
+
+#condicion de salida. Si hay 2 o mas coincidencias es mutante
+    if coincidence >= 2:
+        return True
+    else:
+        return False
